@@ -1,0 +1,43 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb"
+  ],
+  "ignorePatterns": ["*.js", "*.jsx"],
+  "rules": {
+    "no-console": ["error", { "allow": ["warn", "error", "debug", "info"] }],
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "no-undef": "off",
+    "prefer-promise-reject-errors": "off",
+    "max-len": ["error", { "ignoreComments": true, "code": 130, "ignoreStrings": true }],
+    "function-paren-newline": "off",
+    "no-use-before-define": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }],
+    "react/jsx-props-no-spreading": "off",
+    "react/no-array-index-key": "off",
+    "react/require-default-props": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "no-plusplus": "off",
+    "react/react-in-jsx-scope": "off",
+    "linebreak-style": "off",
+    "no-nested-ternary": "off",
+    "jsx-quotes": ["error", "prefer-single"],
+    "comma-dangle": ["error", "never"],
+    "no-tabs": ["error", { "allowIndentationTabs": true }],
+    "operator-linebreak": ["error", "after", { "overrides": { "?": "before", ":": "before" } }],
+    "react/function-component-definition": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": false, "optionalDependencies": false, "peerDependencies": false }
+    ]
+  }
+}
