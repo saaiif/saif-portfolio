@@ -12,13 +12,8 @@ const Navbar = () => {
 
   const path = [
     {
-      name: "Home",
-      url: "/",
-      isActiveValue: true,
-    },
-    {
       name: "About",
-      url: "/about",
+      url: "/",
     },
     {
       name: "Skills",

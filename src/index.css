@@ -1,15 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=DynaPuff:700|DynaPuff:400");
-
-* {
-  padding: 0;
-  margin: 0;
-  transition: all 0.3s ease-in-out;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 :root {
   --background: #f3fcf3;
   --primary-color: #18771a;
@@ -18,6 +7,20 @@ html {
   --text-color: #082b0b;
   --active-text: #297f4c;
   --box-shadow: rgba(0, 0, 0, 0.3);
+}
+* {
+  padding: 0;
+  margin: 0;
+  scroll-padding-top: 3em;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--background);
+  scroll-behavior: smooth;
+  font-family: "DynaPuff" !important;
+  font-weight: 400;
 }
 
 [data-theme="light"] {
@@ -38,11 +41,6 @@ html {
   --active-text: #0dd9c1;
   --menu-background: #0e1c0e;
   --box-shadow: #d4f7d7;
-}
-
-body {
-  font-family: "DynaPuff";
-  font-weight: 400;
 }
 
 h1,
