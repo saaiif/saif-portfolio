@@ -1,5 +1,6 @@
-$navbar-height: 60px;
+$navbar-height: 50px;
 $navbar-padding: 20px;
+$active-link-color: red;
 
 .navbar {
   color: var(--background);
@@ -9,10 +10,8 @@ $navbar-padding: 20px;
   align-items: center;
   position: fixed;
   top: 0;
-
   z-index: 1000;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 8px 10px -3px var(--box-shadow);
   width: fit-content;
   border-radius: 4rem;
   margin-top: 1rem;
@@ -33,10 +32,16 @@ $navbar-padding: 20px;
       a {
         text-decoration: none;
         color: var(--text-color);
-        transition: color 0.3s ease;
-
+        display: block;
+        transition: 0.3s;
         &:hover {
           color: var(--text-color);
+        }
+
+        &.active {
+          color: var(--active-text);
+          border-bottom: 2px solid var(--active-text);
+          transition: all 0.2s ease;
         }
       }
     }
@@ -48,12 +53,9 @@ $navbar-padding: 20px;
 
   @media (max-width: 768px) {
     padding: 10px;
-    width: 50%;
-    border-radius: none;
-    box-shadow: none;
-    margin-top: 1rem;
     left: 0;
-
+    width: 100%;
+    overflow: hidden; // Ensure content overflow is hidden
     ul {
       display: none;
       flex-direction: column;
@@ -61,32 +63,171 @@ $navbar-padding: 20px;
       top: $navbar-height;
       left: 0;
       right: 0;
-      background-color: var(--background);
       padding: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 1px 1px -3px var(--box-shadow);
+      transform: translate(-150);
+      transition: transform 0.5s ease-in-out;
+      background-color: rgba(188, 175, 77, 0.11);
     }
 
     &.expanded {
+      background-color: transparent;
+      box-shadow: none;
+      height: 100%;
       ul {
         display: flex;
+        align-items: center;
+        gap: 1rem;
+        opacity: 1;
       }
     }
-    .hamburger-icon {
-      color: var(--text-color) !important;
-      cursor: pointer;
-    }
-
-    .darkmode-icon {
-      position: absolute;
-      top: 0;
-      right: 0rem;
-      margin-top: 2rem;
+    &.collapsed {
+      transition: transform 0.5s ease-in-out;
+      box-shadow: none;
     }
   }
 }
+
+.hamburger-icon {
+  display: none;
+}
+
 .darkmode-icon {
   position: absolute;
   top: 0;
-  right: 2rem;
+  right: 1rem;
   margin-top: 1.5rem;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .darkmode-icon {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+  }
+  .hamburger-icon {
+    display: block;
+    color: var(--text-color);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    margin-top: 1.5rem;
+    z-index: 1000;
+  }
+}
+
+#menu_button {
+  width: 39px;
+  overflow: hidden;
+}
+
+#menu_checkbox {
+  display: none;
+}
+
+#menu_label {
+  position: relative;
+  display: block;
+  height: 29px;
+  cursor: pointer;
+}
+
+#menu_label:before,
+#menu_label:after,
+#menu_text_bar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--text-color);
+}
+
+#menu_label:before,
+#menu_label:after {
+  content: "";
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) left;
+}
+
+#menu_label:before {
+  top: 0;
+}
+
+#menu_label:after {
+  top: 10px;
+}
+
+#menu_text_bar {
+  top: 20px;
+}
+
+#menu_text_bar:before {
+  content: "MENU";
+  position: absolute;
+  top: 6px;
+  right: 0;
+  left: 0;
+  color: var(--text-color);
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#menu_checkbox:checked + #menu_label:before {
+  left: -39px;
+}
+
+#menu_checkbox:checked + #menu_label:after {
+  left: 39px;
+}
+
+#menu_checkbox:checked + #menu_label #menu_text_bar:before {
+  animation: moveUpThenDown 0.8s ease 0.2s forwards, shakeWhileMovingUp 0.8s ease 0.2s forwards,
+    shakeWhileMovingDown 0.2s ease 0.8s forwards;
+}
+
+@keyframes moveUpThenDown {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -27px;
+  }
+  100% {
+    top: -14px;
+  }
+}
+
+@keyframes shakeWhileMovingUp {
+  0% {
+    transform: rotateZ(0);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  50% {
+    transform: rotateZ(0deg);
+  }
+  75% {
+    transform: rotateZ(10deg);
+  }
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+@keyframes shakeWhileMovingDown {
+  0% {
+    transform: rotateZ(0);
+  }
+  80% {
+    transform: rotateZ(3deg);
+  }
+  90% {
+    transform: rotateZ(-3deg);
+  }
+  100% {
+    transform: rotateZ(0);
+  }
 }

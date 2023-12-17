@@ -6,12 +6,18 @@
   transition: all 0.3s ease-in-out;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --background: #f3fcf3;
   --primary-color: #18771a;
   --secondary-color: #7be5be;
   --accent-color: #2acbb8;
   --text-color: #082b0b;
+  --active-text: #297f4c;
+  --box-shadow: rgba(0, 0, 0, 0.3);
 }
 
 [data-theme="light"] {
@@ -20,6 +26,7 @@
   --primary-color: #2b772c;
   --secondary-color: #7be5be;
   --accent-color: #29f2da;
+  --box-shadow: rgba(0, 0, 0, 0.3);
 }
 
 [data-theme="dark"] {
@@ -28,6 +35,9 @@
   --primary-color: #87d488;
   --secondary-color: #1a845d;
   --accent-color: #0dd9c1;
+  --active-text: #0dd9c1;
+  --menu-background: #0e1c0e;
+  --box-shadow: #d4f7d7;
 }
 
 body {
@@ -52,7 +62,7 @@ h1 {
   font-size: 4.21rem; /* 67.36px */
 }
 
-h2 {  
+h2 {
   font-size: 3.158rem; /* 50.56px */
 }
 
@@ -70,4 +80,8 @@ h5 {
 
 small {
   font-size: 0.75rem; /* 12px */
+}
+
+ul {
+  font-size: 1rem; /* 12px */
 }
