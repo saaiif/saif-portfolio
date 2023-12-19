@@ -2,97 +2,103 @@ $navbar-height: 50px;
 $navbar-padding: 20px;
 $active-link-color: red;
 
-.navbar {
-  color: var(--background);
-  height: $navbar-height;
-  padding: 0 $navbar-padding;
+.navbar-container {
+  height: 60px;
+  margin-bottom: 3rem;
   display: flex;
   align-items: center;
-  position: fixed;
-  z-index: 1000;
-  border-radius: 4rem;
-  margin-top: 1rem;
-  background-color: var(--background);
+  justify-content: center;
 
-  box-shadow: 0px 8px 10px -3px var(--box-shadow);
-
-  ul {
-    list-style: none;
+  .navbar {
+    color: var(--background);
+    height: $navbar-height;
+    padding: 0 $navbar-padding;
     display: flex;
-    margin: 0;
-    padding: 0;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    border-radius: 4rem;
+    margin-top: 1rem;
+    background-color: var(--background);
 
-    li {
-      margin: 0 15px;
+    box-shadow: 0px 8px 10px -3px var(--box-shadow);
 
-      a {
-        text-decoration: none;
-        color: var(--text-color);
-        display: block;
-        transition: 0.3s;
-        &:hover {
-          color: var(--text-color);
-        }
-
-        &.active {
-          color: var(--active-text);
-          border-bottom: 2px solid var(--active-text);
-          transition: all 0.2s ease;
-        }
-      }
-    }
-  }
-
-  .hamburger-icon {
-    display: none;
-  }
-
-  @media (max-width: 768px) {
-    padding: 10px;
-    left: 0;
-    width: 100%;
-    overflow: hidden; // Ensure content overflow is hidden
     ul {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: $navbar-height;
-      left: 0;
-      right: 0;
-      padding: 10px;
-      box-shadow: 0px 1px 1px -3px var(--box-shadow);
-      transform: translate(-150);
-      transition: transform 0.5s ease-in-out;
-      background-color: rgba(188, 175, 77, 0.11);
-    }
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
 
-    &.expanded {
-      background-color: transparent;
-      box-shadow: none;
-      height: 100%;
-      ul {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        opacity: 1;
+      li {
+        margin: 0 15px;
+
+        a {
+          text-decoration: none;
+          color: var(--text-color);
+          display: block;
+          transition: 0.3s;
+          &:hover {
+            color: var(--text-color);
+          }
+
+          &.active {
+            color: var(--active-text);
+            border-bottom: 2px solid var(--active-text);
+            transition: all 0.2s ease;
+          }
+        }
       }
     }
-    &.collapsed {
-      transition: transform 0.5s ease-in-out;
-      box-shadow: none;
+
+    .hamburger-icon {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      padding: 10px;
+      left: 0;
+      width: 100%;
+      ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        box-shadow: 0px 1px 1px -3px var(--box-shadow);
+        transition: transform 0.5s ease-in-out;
+        background-color: rgba(188, 175, 77, 0.9);
+      }
+
+      &.expanded {
+        background: transparent;
+        box-shadow: none;
+        height: 100%;
+        ul {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-top: 12rem;
+          opacity: 1;
+        }
+      }
+      &.collapsed {
+        transition: transform 0.5s ease-in-out;
+        box-shadow: none;
+        background: no-repeat;
+        position: sticky !important;
+      }
     }
   }
 }
-
 .hamburger-icon {
   display: none;
 }
 
 .darkmode-icon {
-  position: absolute;
+  position: fixed !important;
   top: 1rem;
   right: 1rem;
-  position: fixed;
   z-index: 9997;
 }
 
@@ -118,6 +124,7 @@ $active-link-color: red;
 #menu_button {
   width: 39px;
   overflow: hidden;
+  position: fixed;
 }
 
 #menu_checkbox {
@@ -180,7 +187,9 @@ $active-link-color: red;
 }
 
 #menu_checkbox:checked + #menu_label #menu_text_bar:before {
-  animation: moveUpThenDown 0.8s ease 0.2s forwards, shakeWhileMovingUp 0.8s ease 0.2s forwards,
+  animation:
+    moveUpThenDown 0.8s ease 0.2s forwards,
+    shakeWhileMovingUp 0.8s ease 0.2s forwards,
     shakeWhileMovingDown 0.2s ease 0.8s forwards;
 }
 
