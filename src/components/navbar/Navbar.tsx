@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const path = [
     {
-      name: "About",
+      name: "Intro",
       url: "/",
     },
     {
