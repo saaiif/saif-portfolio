@@ -2,12 +2,14 @@ import { Outlet } from "react-router-dom";
 import "./App.css";
 
 import Navbar from "./components/navbar/Navbar";
+import Particle from "./components/Particle";
 
 function App() {
   return (
-    <div className='app'>
+    <div className="app">
       <Navbar />
-      <main >
+      <Particle />
+      <main>
         <Outlet />
       </main>
     </div>

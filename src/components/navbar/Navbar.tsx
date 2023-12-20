@@ -30,12 +30,15 @@ const Navbar = () => {
   const toggleNavbar = () => {
     setIsExpanded(!isExpanded);
   };
-  console.log(width);
   return (
     <>
       <div className={`navbar-container`}>
         <nav className={`navbar ${isExpanded ? "expanded" : "collapsed"}`}>
-          <ul className={width < 990 && !isExpanded ? "navbar-display" : ""}>
+          <ul
+            className={
+              width && width < 990 && !isExpanded ? "navbar-display" : ""
+            }
+          >
             {path?.map(({ name, url }) => (
               <li key={url}>
                 <NavLink

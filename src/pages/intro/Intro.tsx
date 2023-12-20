@@ -51,7 +51,7 @@ function Intro() {
               {" "}
               sites & apps
             </span>. <br /> My focus is{" "}
-            <span className="intro--underline">React (Next.js)</span>.
+            <span className="intro--underline">React</span>.
           </motion.h1>
         </div>
       </div>
