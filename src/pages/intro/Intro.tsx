@@ -12,7 +12,6 @@ function Intro() {
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: "tween", duration: 0.2 }}
           >
             <img src={MyImage} alt="profile-pic" loading="lazy" />
           </motion.div>
@@ -23,7 +22,7 @@ function Intro() {
             transition={{
               type: "spring",
               stiffness: 125,
-              delay: 0.1,
+              delay: 0.5,
               duration: 0.7,
             }}
           >
@@ -34,8 +33,14 @@ function Intro() {
         <div className="intro--text">
           <motion.h1
             className="intro--section"
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 10 }}
+            transition={{
+              type: "spring",
+              stiffness: 20,
+              delay: 0.2,
+              duration: 0.7,
+            }}
           >
             <span className="intro--span">Hello, I'm Saif Mujawar.</span> <br />
             <br />
@@ -55,6 +60,12 @@ function Intro() {
           className="intro--section"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{
+            type: "spring",
+            stiffness: 20,
+            delay: 0.2,
+            duration: 0.7,
+          }}
         >
           <Resume />
         </motion.h1>
