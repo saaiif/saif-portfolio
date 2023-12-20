@@ -30,6 +30,7 @@ function Intro() {
             👋
           </motion.span>
         </div>
+
         <div className="intro--text">
           <motion.h1
             className="intro--section"

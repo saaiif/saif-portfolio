@@ -1,39 +1,41 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.scss";
 import DarkMode from "../darkMode/DarkMode";
+import { useWindowSize } from "../../hooks/useWindowSize";
+
+const path = [
+  {
+    name: "Intro",
+    url: "/",
+  },
+  {
+    name: "Skills",
+    url: "/skills",
+  },
+  {
+    name: "Projects",
+    url: "/projects",
+  },
+  {
+    name: "Contact",
+    url: "/contact",
+  },
+];
 
 const Navbar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const { width } = useWindowSize();
 
   const toggleNavbar = () => {
     setIsExpanded(!isExpanded);
   };
-
-  const path = [
-    {
-      name: "Intro",
-      url: "/",
-    },
-    {
-      name: "Skills",
-      url: "/skills",
-    },
-    {
-      name: "Projects",
-      url: "/projects",
-    },
-    {
-      name: "Contact",
-      url: "/contact",
-    },
-  ];
-
+  console.log(width);
   return (
     <>
-      <div className="navbar-container">
+      <div className={`navbar-container`}>
         <nav className={`navbar ${isExpanded ? "expanded" : "collapsed"}`}>
-          <ul>
+          <ul className={width < 990 && !isExpanded ? "navbar-display" : ""}>
             {path?.map(({ name, url }) => (
               <li key={url}>
                 <NavLink
