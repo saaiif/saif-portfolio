@@ -4,7 +4,7 @@ import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import { Particle } from "./components/Particle.jsx";
 import Intro from "./pages/intro/Intro";
-import Skills from "./pages/skills/Skills";
+import Skills from "./pages/skills/skills";
 import useScrollToSection from "./hooks/useScrollToSection";
 import Project from "./pages/project/Project";
 import Contact from "./pages/contact/Contact";
@@ -32,4 +32,7 @@ function App() {
   );
 }
 
-export default App;
+//soumyajit.vercel.app/
+//https://github.com/soumyajit4419/Portfolio/blob/master/src/index.css
+
+https: export default App;
