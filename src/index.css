@@ -13,7 +13,7 @@
 * {
   padding: 0;
   margin: 0;
-  scroll-padding-top: 3em;
+  scroll-padding-top: 3em !important;
   box-sizing: border-box;
 }
 

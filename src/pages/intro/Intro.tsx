@@ -3,10 +3,11 @@ import "./Intro.scss";
 import { motion } from "framer-motion";
 import MyImage from "../../assets/images/profile.jpeg";
 import Resume from "./Resume";
+import useScrollToSection from "../../hooks/useScrollToSection";
 
-function Intro() {
+function Intro({ intro }: any) {
   return (
-    <div className="intro">
+    <section className="intro" ref={intro} id="intro">
       <div className="intro--left">
         <div className="intro--img">
           <motion.div
@@ -70,7 +71,7 @@ function Intro() {
           <Resume />
         </motion.h1>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -3,14 +3,30 @@ import "./App.css";
 
 import Navbar from "./components/navbar/Navbar";
 import { Particle } from "./components/Particle.jsx";
+import Intro from "./pages/intro/Intro";
+import Skills from "./pages/skills/Skills";
+import useScrollToSection from "./hooks/useScrollToSection";
+import Project from "./pages/project/Project";
+import Contact from "./pages/contact/Contact";
 
 function App() {
+  const { intro, skills, project, contact, scrollToSection } =
+    useScrollToSection();
   return (
     <div className="app">
-      <Navbar />
+      <Navbar
+        intro={intro}
+        skills={skills}
+        project={project}
+        contact={contact}
+        scrollToSection={scrollToSection}
+      />
       <Particle />
       <main>
-        <Outlet />
+        <Intro intro={intro} />
+        <Skills skills={skills} />
+        <Project project={project} />
+        <Contact contact={contact} />
       </main>
     </div>
   );

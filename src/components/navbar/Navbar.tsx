@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.scss";
 import DarkMode from "../darkMode/DarkMode";
@@ -23,13 +23,64 @@ const path = [
   },
 ];
 
-const Navbar = () => {
+type NavbarProps = {
+  intro?: any;
+  skills?: any;
+  project?: any;
+  contact?: any;
+  scrollToSection?: (val: any) => void;
+};
+
+const Navbar = ({
+  intro,
+  skills,
+  project,
+  contact,
+  scrollToSection,
+}: NavbarProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { width } = useWindowSize();
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const observer = useRef<any>([]);
+  const navLi = document.querySelectorAll("nav ul li");
+
+  const refs = [intro, skills, project, contact];
 
   const toggleNavbar = () => {
     setIsExpanded(!isExpanded);
   };
+
+  const handleScroll = () => {
+    const pageYOffset = window.pageYOffset;
+    let newActiveSection: any = null;
+
+    refs?.forEach((section: any) => {
+      const sectionOffsetTop = section?.current?.offsetTop;
+      const sectionHeight = section?.current?.offsetHeight;
+      console.log(pageYOffset, sectionOffsetTop, sectionHeight, "hey");
+      if (
+        pageYOffset >= sectionOffsetTop &&
+        pageYOffset >= sectionOffsetTop - sectionHeight / 2
+      ) {
+        newActiveSection = section.current.id;
+      }
+    });
+    setActiveSection(newActiveSection);
+    navLi.forEach((li) => {
+      li.classList.remove("active");
+      if (li.classList.contains(newActiveSection)) {
+        li.classList.add("active");
+      }
+    });
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  // console.log(activeSection, refs, "ddddddd");
   return (
     <>
       <div className={`navbar-container`}>
@@ -39,16 +90,19 @@ const Navbar = () => {
               width && width < 990 && !isExpanded ? "navbar-display" : ""
             }
           >
-            {path?.map(({ name, url }) => (
-              <li key={url}>
-                <NavLink
-                  to={url}
-                  className={({ isActive }: { isActive?: boolean }): string =>
-                    isActive ? "active" : ""
-                  }
-                >
-                  {name}
-                </NavLink>
+            {path?.map(({ name, url }, index) => (
+              <li
+                key={url}
+                onClick={() => scrollToSection?.(refs[index])}
+                className={
+                  activeSection && refs[index]?.current?.id === activeSection
+                    ? "active"
+                    : !activeSection && index === 0
+                      ? "active"
+                      : ""
+                }
+              >
+                {name}
               </li>
             ))}
           </ul>

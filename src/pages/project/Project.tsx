@@ -1,10 +1,10 @@
 import React from "react";
-import "./skills.scss";
+import "./Project.scss";
 import { motion } from "framer-motion";
 import MyImage from "../../assets/images/profile.jpeg";
 import useScrollToSection from "../../hooks/useScrollToSection";
 import Resume from "../intro/Resume";
-function Skills({ project }: any) {
+function Project({ project }: any) {
   return (
     <section className="project" ref={project} id="project">
       <div className="intro--left">
@@ -74,4 +74,4 @@ function Skills({ project }: any) {
   );
 }
 
-export default Skills;
+export default Project;

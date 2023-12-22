@@ -1,12 +1,12 @@
 import React from "react";
-import "./skills.scss";
+import "./Contact.scss";
 import { motion } from "framer-motion";
 import MyImage from "../../assets/images/profile.jpeg";
 import useScrollToSection from "../../hooks/useScrollToSection";
 import Resume from "../intro/Resume";
-function Skills({ project }: any) {
+function Contact({ contact }: any) {
   return (
-    <section className="project" ref={project} id="project">
+    <section className="contact" ref={contact} id="contact">
       <div className="intro--left">
         <div className="intro--img">
           <motion.div
@@ -74,4 +74,4 @@ function Skills({ project }: any) {
   );
 }
 
-export default Skills;
+export default Contact;
