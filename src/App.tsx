@@ -10,17 +10,10 @@ import Project from "./pages/project/Project";
 import Contact from "./pages/contact/Contact";
 
 function App() {
-  const { intro, skills, project, contact, scrollToSection } =
-    useScrollToSection();
+  const { intro, skills, project, contact, scrollToSection } = useScrollToSection();
   return (
-    <div className="app">
-      <Navbar
-        intro={intro}
-        skills={skills}
-        project={project}
-        contact={contact}
-        scrollToSection={scrollToSection}
-      />
+    <div className='app'>
+      <Navbar intro={intro} skills={skills} project={project} contact={contact} scrollToSection={scrollToSection} />
       <Particle />
       <main>
         <Intro intro={intro} />
@@ -35,4 +28,4 @@ function App() {
 //soumyajit.vercel.app/
 //https://github.com/soumyajit4419/Portfolio/blob/master/src/index.css
 
-https: export default App;
+export default App;

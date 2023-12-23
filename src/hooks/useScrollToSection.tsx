@@ -7,7 +7,6 @@ const useScrollToSection = () => {
   const contact = useRef(null);
 
   const scrollToSection = (elementRef: any) => {
-    console.log(elementRef, "saif");
     elementRef &&
       window?.scrollTo({
         top: elementRef?.current?.offsetTop,
