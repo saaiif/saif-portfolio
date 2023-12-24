@@ -1,153 +1,77 @@
-import React, { RefObject } from "react";
+import React from "react";
 import "./skills.scss";
 import { motion } from "framer-motion";
-import SkillsImage from "../../assets/images/skills.png";
+import MyImage from "../../assets/images/profile.jpeg";
 import useScrollToSection from "../../hooks/useScrollToSection";
 import Resume from "../intro/Resume";
-import { Link } from "react-router-dom";
-import { CssIcon, GitIcon, HtmlIcon, JSIcon, NextIcon, ReactIcon } from "../../assets/icons/skills";
-type SkillsProps = {
-  skills: RefObject<any> | undefined;
-  isDarkMode: string | null;
-};
-function Skills({ skills, isDarkMode }: SkillsProps) {
+function Skills({ project }: any) {
   return (
-    <div className='skills-page' ref={skills} id='skills'>
-      <h1 datatype='Skills'>Skills</h1>
-      <div className='skills-page--skills'>
-        <div className='skills-page--languages'>
-          <h2 datatype='Skills'>Languages/Libraries</h2>
-          <ul>
-            <li>
-              <HtmlIcon />
-              <span>HTML5</span>
-            </li>
-            <li>
-              <CssIcon />
-              <span>CSS3</span>
-            </li>
-            <li>
-              <JSIcon />
-              <span>JavaScript</span>
-            </li>
-            <li>
-              <ReactIcon className='SpinIcon' />
-              <span>React</span>
-            </li>
-            <li>
-              <NextIcon fill={isDarkMode === "dark" ? "#7be5be" : "#000000"} />
-              <span>Next.JS</span>
-            </li>
-          </ul>
+    <section className="project" ref={project} id="project">
+      <div className="intro--left">
+        <div className="intro--img">
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+          >
+            <img src={MyImage} alt="profile-pic" loading="lazy" />
+          </motion.div>
+          <motion.span
+            className="img-hand-wave"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 125,
+              delay: 0.5,
+              duration: 0.7,
+            }}
+          >
+            👋
+          </motion.span>
         </div>
-        <div className='skills-page--languages'>
-          <h2 datatype='Skills'>Devtools</h2>
-          <ul>
-            <li>
-              <GitIcon />
-              <span>Git</span>
-            </li>
-          </ul>
-        </div>
-        <div className='skills-page--languages'>
-          <h2 datatype='Skills'>Languages/Libraries</h2>
-          <ul>
-            <li>
-              <HtmlIcon />
-              <span>HTML5</span>
-            </li>
-            <li>
-              <CssIcon />
-              <span>CSS3</span>
-            </li>
-            <li>
-              <JSIcon />
-              <span>JavaScript</span>
-            </li>
-            <li>
-              <ReactIcon className='SpinIcon' />
-              <span>React</span>
-            </li>
-            <li>
-              <NextIcon />
-              <span>Next.JS</span>
-            </li>
-          </ul>
+
+        <div className="intro--text">
+          <motion.h1
+            className="intro--section"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 10 }}
+            transition={{
+              type: "spring",
+              stiffness: 20,
+              delay: 0.2,
+              duration: 0.7,
+            }}
+          >
+            <span className="intro--span">Hello, I'm Saif Mujawar.</span> <br />
+            <br />
+            I'm a <span className="intro--clip">Frontend developer </span>
+            with <span className="intro--span">4+ years</span> of experience. I
+            enjoy building
+            <span className="intro--italic intro--clip">
+              {" "}
+              sites & apps
+            </span>. <br /> My focus is{" "}
+            <span className="intro--underline">React</span>.
+          </motion.h1>
         </div>
       </div>
-    </div>
+      <div className="intro--right">
+        <motion.h1
+          className="intro--section"
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            type: "spring",
+            stiffness: 20,
+            delay: 0.2,
+            duration: 0.7,
+          }}
+        >
+          <Resume />
+        </motion.h1>
+      </div>
+    </section>
   );
 }
 
-// <section className='skills-page' ref={skills} id='skills'>
-//   <div className='skills-page--content'>
-//     <h1 datatype='Skills'>Skills</h1>
-
-//     <div className='skills-page--skills'>
-//       <div className='languages'>
-//         <h2 datatype='Skills'>Languages</h2>
-//         <ul>
-//           <li>
-//             <HtmlIcon fill={!darkMode ? "#000" : "#fff"} />
-//             <span>HTML5</span>
-//           </li>
-//           <li>
-//             <HtmlIcon fill='#fff' />
-//             <span>HTML5</span>
-//           </li>
-//           <li>
-//             <HtmlIcon fill='#fff' />
-//             <span>HTML5</span>
-//           </li>
-//           <li>
-//             <HtmlIcon fill='#fff' />
-//             <span>HTML5</span>
-//           </li>
-//           <li>
-//             <HtmlIcon fill='#fff' />
-//             <span>HTML5</span>
-//           </li>
-//         </ul>
-//       </div>
-
-//       {/* <div className='devtools'>
-//         <h2 datatype='Skills'>Dev Tools</h2>
-//         <ul>
-//           <li>
-//             <HtmlIcon fill='#fff' />
-//             <span>Git</span>
-//           </li>
-//         </ul>
-//       </div> */}
-
-//       {/* <div className='devtools'>
-//         <h2 datatype='Skills'>CSS Frameworks</h2>
-//         <ul>
-//           <li>
-//             <img style={{ width: "24px" }} src={BootstrapIcon} alt='Bootstrap Icon' />
-//             <span>Bootstrap</span>
-//           </li>
-//           <li>
-//             <img style={{ width: "24px" }} src={MaterialUI} alt='Material UI' />
-//             <span>Material UI</span>
-//           </li>
-//           <li>
-//             <img style={{ width: "24px" }} src={TailwindCSS} alt='Bootstrap Icon' />
-//             <span>TailWind CSS</span>
-//           </li>
-//           <li>
-//             <img style={{ width: "24px" }} src={MaterializeIcon} alt='Materialize Icon' />
-//             <span>Materialize CSS</span>
-//           </li>
-//         </ul>
-//       </div> */}
-//     </div>
-
-//     <p>
-//       You must be wondering what I have done with all the things above.
-//       <br /> Well,
-//       <Link to='/project'> here you go</Link>.
-//     </p>
-//   </div>
-// </section>
 export default Skills;
