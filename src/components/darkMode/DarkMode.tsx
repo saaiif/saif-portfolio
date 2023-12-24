@@ -1,9 +1,16 @@
 import "./DarkMode.scss";
 import { MoonIcon, SunIcon } from "../../assets/icons/DarkmodeToggle";
+import useTheme from "../../hooks/useTheme";
+import { Dispatch, SetStateAction, useEffect } from "react";
 
-const DarkMode = () => {
+type DarkModeProps = {
+  setIsDarkMode?: Dispatch<SetStateAction<string | null>> | undefined;
+};
+
+const DarkMode = ({ setIsDarkMode }: DarkModeProps) => {
   const setDarkMode = () => {
     document.querySelector("body")?.setAttribute("data-theme", "dark");
+
     localStorage.setItem("selectedTheme", "dark");
   };
   const setLightMode = () => {
@@ -12,24 +19,26 @@ const DarkMode = () => {
   };
   const selectedTheme = localStorage.getItem("selectedTheme");
 
-  if (selectedTheme === "dark") {
+  if (selectedTheme === "dark" || selectedTheme === null) {
     setDarkMode();
   }
 
   const toggleTheme = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsDarkMode?.(e.target.checked ? "dark" : "light");
     if (e.target.checked) setDarkMode();
     else setLightMode();
   };
+
   return (
-    <div className="dark-mode">
+    <div className='dark-mode'>
       <input
-        className="dark-mode--input"
-        type="checkbox"
-        id="darkmode-toggle"
+        className='dark-mode--input'
+        type='checkbox'
+        id='darkmode-toggle'
         onChange={toggleTheme}
-        defaultChecked={selectedTheme === "dark"}
+        defaultChecked={selectedTheme === "dark" || selectedTheme === null}
       />
-      <label className="dark-mode--label" htmlFor="darkmode-toggle">
+      <label className='dark-mode--label' htmlFor='darkmode-toggle'>
         <SunIcon />
         <MoonIcon />
       </label>

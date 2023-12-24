@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=DynaPuff:700|DynaPuff:400");
 :root {
-  --background: linear-gradient(to left, #263826, #8cb58c);
+  --background: linear-gradient(to left, #ece9e6, #ffffff);
   --primary-color: #18771a;
   --secondary-color: #7be5be;
   --accent-color: #2acbb8;
@@ -27,10 +27,10 @@ body {
 
 [data-theme="light"] {
   --text-color: #082b0b;
-  --background: linear-gradient(to left, #263826, #8cb58c);
+  --background: linear-gradient(to left, #ece9e6, #ffffff);
   --primary-color: #2b772c;
   --secondary-color: #7be5be;
-  --accent-color: #29f2da;
+  --accent-color: #eb3349;
   --box-shadow: rgba(0, 0, 0, 0.3);
   --menu-background: rgba(130, 197, 130, 0.883);
   --background-image: url("/src/assets/images/lightbackground.svg");

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, RefObject, Dispatch, SetStateAction } from "react";
 import "./Navbar.scss";
 import DarkMode from "../darkMode/DarkMode";
 import { useWindowSize } from "../../hooks/useWindowSize";
@@ -23,14 +23,15 @@ const path = [
 ];
 
 type NavbarProps = {
-  intro?: any;
-  skills?: any;
-  project?: any;
-  contact?: any;
-  scrollToSection?: (val: any) => void;
+  intro?: RefObject<any> | undefined;
+  skills?: RefObject<any> | undefined;
+  project?: RefObject<any> | undefined;
+  contact?: RefObject<any> | undefined;
+  scrollToSection?: (val: RefObject<any> | undefined) => void;
+  setIsDarkMode?: Dispatch<SetStateAction<string | null>> | undefined;
 };
 
-const Navbar = ({ intro, skills, project, contact, scrollToSection }: NavbarProps) => {
+const Navbar = ({ intro, skills, project, contact, scrollToSection, setIsDarkMode }: NavbarProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { width } = useWindowSize();
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -51,6 +52,8 @@ const Navbar = ({ intro, skills, project, contact, scrollToSection }: NavbarProp
         newActiveSection = section.current.id;
       }
     });
+    console.log({ refs, newActiveSection });
+
     localStorage.setItem("activeSection", newActiveSection);
     setActiveSection(newActiveSection);
   };
@@ -72,7 +75,7 @@ const Navbar = ({ intro, skills, project, contact, scrollToSection }: NavbarProp
             {path?.map(({ name, url }, index) => (
               <li
                 key={url}
-                onClick={() => scrollToSection?.(refs[index])}
+                onClick={() => scrollToSection?.(refs?.[index])}
                 className={refs[index]?.current?.id === activeSection || (!activeSection && index === 0) ? "active" : ""}
               >
                 {name}
@@ -88,7 +91,7 @@ const Navbar = ({ intro, skills, project, contact, scrollToSection }: NavbarProp
         </label>
       </div>
       <div className='darkmode-icon'>
-        <DarkMode />
+        <DarkMode setIsDarkMode={setIsDarkMode} />
       </div>
     </>
   );

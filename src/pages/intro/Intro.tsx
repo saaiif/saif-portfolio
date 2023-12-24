@@ -40,11 +40,10 @@ function Intro({ intro }: any) {
             }}
           >
             <span className='intro--span'>Hello, I'm Saif Mujawar.</span> <br />
-            <br />
-            I'm a <span className='intro--clip'>Frontend developer </span>
+            <br />A <span className='intro--clip'>Frontend developer </span>
             with <span className='intro--span'>4+ years</span> of experience. I enjoy building
-            <span className='intro--italic intro--clip'> sites & apps</span>. <br /> My focus is{" "}
-            <span className='intro--underline'>React</span>.
+            <span className='intro--italic intro--clip'> sites & apps</span>. <br /> <br /> My focus is
+            <span className='intro--underline'>React (Next.JS)</span>.
           </motion.h1>
         </div>
       </div>
