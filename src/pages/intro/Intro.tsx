@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "./Intro.scss";
 import Resume from "./Resume";
 import MyImage from "../../assets/images/profile.jpeg";
+import "./Intro.scss";
 
 function Intro({ intro }: any) {
   return (

@@ -1,12 +1,13 @@
-import { useEffect, useState, RefObject, Dispatch, SetStateAction } from "react";
+import React, { useEffect, useState, RefObject, Dispatch, SetStateAction } from "react";
 import "./Navbar.scss";
 import DarkMode from "../darkMode/DarkMode";
 import { useWindowSize } from "../../hooks/useWindowSize";
+import { Link, animateScroll as scroll, Events } from "react-scroll";
 
 const path = [
   {
     name: "Intro",
-    url: "/",
+    url: "/intro",
   },
   {
     name: "Skills",
@@ -41,46 +42,105 @@ const Navbar = ({ intro, skills, project, contact, scrollToSection, setIsDarkMod
     setIsExpanded(!isExpanded);
   };
 
-  const handleScroll = () => {
-    const pageYOffset = window.scrollY;
-    let newActiveSection: any = null;
+  const [selectedLink, setSelectedLink] = useState<string | undefined>(undefined);
 
-    refs?.forEach((section: any) => {
-      const sectionOffsetTop = section?.current?.offsetTop;
-      const sectionHeight = section?.current?.offsetHeight;
-      if (pageYOffset >= sectionOffsetTop && pageYOffset >= sectionOffsetTop - sectionHeight / 2 - 60) {
-        newActiveSection = section.current.id;
-      }
-    });
-    console.log({ refs, newActiveSection });
+  // const handleScroll = () => {
+  //   const pageYOffset = window.scrollY;
+  //   let newActiveSection: any = null;
 
-    localStorage.setItem("activeSection", newActiveSection);
-    setActiveSection(newActiveSection);
-  };
+  //   refs?.forEach((section: any) => {
+  //     const sectionOffsetTop = section?.current?.offsetTop;
+  //     const sectionHeight = section?.current?.offsetHeight;
+  //     if (pageYOffset >= sectionOffsetTop && pageYOffset >= sectionOffsetTop - sectionHeight) {
+  //       newActiveSection = section.current.id;
+  //     }
+  //   });
+  //   console.log({ refs, newActiveSection });
+
+  //   localStorage.setItem("activeSection", newActiveSection);
+  //   setActiveSection(newActiveSection);
+  // };
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleClick);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleClick);
+  //   };
+  // }, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    const getActiveSection = localStorage.getItem("activeSection") === "null" ? null : localStorage.getItem("activeSection");
-    setActiveSection(getActiveSection);
+    // Add event listener for scroll
+    Events.scrollEvent.register("begin", (to, element) => {
+      // Update selectedLink on scroll
+      console.log(element.id);
+      setSelectedLink(element.id);
+    });
+
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      // Remove event listener when the component is unmounted
+      Events.scrollEvent.remove("begin");
     };
   }, []);
 
   return (
     <>
-      <div className={`navbar-container`}>
+      <div className='navbar-container'>
         <nav className={`navbar ${isExpanded ? "expanded" : "collapsed"}`}>
           <ul className={width && width < 990 && !isExpanded ? "navbar-display" : ""}>
-            {path?.map(({ name, url }, index) => (
-              <li
-                key={url}
-                onClick={() => scrollToSection?.(refs?.[index])}
-                className={refs[index]?.current?.id === activeSection || (!activeSection && index === 0) ? "active" : ""}
+            <li className=''>
+              <Link
+                className={refs?.[0]?.current?.id === selectedLink ? "active" : ""}
+                // activeClass={refs?.[1]?.current?.id === selectedLink ? "active" : ""}
+                to='intro'
+                spy={true}
+                smooth={true}
+                offset={-150}
+                duration={100}
               >
-                {name}
-              </li>
-            ))}
+                Intro
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={refs?.[1]?.current?.id === selectedLink ? "active" : ""}
+                // activeClass={refs?.[1]?.current?.id === selectedLink ? "active" : ""}
+                to='skills'
+                spy={true}
+                smooth={true}
+                offset={-30}
+                duration={100}
+                isDynamic={true}
+              >
+                Skills
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={refs?.[2]?.current?.id === selectedLink ? "active" : ""}
+                // activeClass={refs?.[1]?.current?.id === selectedLink ? "active" : ""}
+                to='project'
+                spy={true}
+                smooth={true}
+                offset={-30}
+                duration={100}
+                isDynamic={true}
+              >
+                Project
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={refs?.[3]?.current?.id === selectedLink ? "active" : ""}
+                // activeClass={refs?.[1]?.current?.id === selectedLink ? "active" : ""}
+                to='contact'
+                spy={true}
+                smooth={true}
+                offset={-10}
+                duration={100}
+              >
+                Contact
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>

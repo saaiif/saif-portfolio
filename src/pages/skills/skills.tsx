@@ -1,18 +1,13 @@
 import React, { RefObject } from "react";
-import "./skills.scss";
-import { motion } from "framer-motion";
-import SkillsImage from "../../assets/images/skills.png";
-import useScrollToSection from "../../hooks/useScrollToSection";
-import Resume from "../intro/Resume";
-import { Link } from "react-router-dom";
 import { CssIcon, GitIcon, HtmlIcon, JSIcon, NextIcon, ReactIcon } from "../../assets/icons/skills";
+import "./skills.scss";
 type SkillsProps = {
   skills: RefObject<any> | undefined;
   isDarkMode: string | null;
 };
 function Skills({ skills, isDarkMode }: SkillsProps) {
   return (
-    <div className='skills-page' ref={skills} id='skills'>
+    <section className='skills-page' ref={skills} id='skills'>
       <h1 datatype='Skills'>Skills</h1>
       <div className='skills-page--skills'>
         <div className='skills-page--languages'>
@@ -75,7 +70,68 @@ function Skills({ skills, isDarkMode }: SkillsProps) {
           </ul>
         </div>
       </div>
-    </div>
+      <div className='skills-page--skills'>
+        <div className='skills-page--languages'>
+          <h2 datatype='Skills'>Languages/Libraries</h2>
+          <ul>
+            <li>
+              <HtmlIcon />
+              <span>HTML5</span>
+            </li>
+            <li>
+              <CssIcon />
+              <span>CSS3</span>
+            </li>
+            <li>
+              <JSIcon />
+              <span>JavaScript</span>
+            </li>
+            <li>
+              <ReactIcon className='SpinIcon' />
+              <span>React</span>
+            </li>
+            <li>
+              <NextIcon fill={isDarkMode === "dark" ? "#7be5be" : "#000000"} />
+              <span>Next.JS</span>
+            </li>
+          </ul>
+        </div>
+        <div className='skills-page--languages'>
+          <h2 datatype='Skills'>Devtools</h2>
+          <ul>
+            <li>
+              <GitIcon />
+              <span>Git</span>
+            </li>
+          </ul>
+        </div>
+        <div className='skills-page--languages'>
+          <h2 datatype='Skills'>Languages/Libraries</h2>
+          <ul>
+            <li>
+              <HtmlIcon />
+              <span>HTML5</span>
+            </li>
+            <li>
+              <CssIcon />
+              <span>CSS3</span>
+            </li>
+            <li>
+              <JSIcon />
+              <span>JavaScript</span>
+            </li>
+            <li>
+              <ReactIcon className='SpinIcon' />
+              <span>React</span>
+            </li>
+            <li>
+              <NextIcon />
+              <span>Next.JS</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
   );
 }
 
