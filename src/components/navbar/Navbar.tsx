@@ -1,27 +1,8 @@
-import React, { useEffect, useState, RefObject, Dispatch, SetStateAction } from "react";
+import React, { useState, RefObject, Dispatch, SetStateAction, useRef, useCallback } from "react";
 import "./Navbar.scss";
 import DarkMode from "../darkMode/DarkMode";
 import { useWindowSize } from "../../hooks/useWindowSize";
-import { Link, animateScroll as scroll, Events } from "react-scroll";
-
-const path = [
-  {
-    name: "Intro",
-    url: "/intro",
-  },
-  {
-    name: "Skills",
-    url: "/skills",
-  },
-  {
-    name: "Projects",
-    url: "/projects",
-  },
-  {
-    name: "Contact",
-    url: "/contact",
-  },
-];
+import { Link, animateScroll as scroll, Events, ScrollElement } from "react-scroll";
 
 type NavbarProps = {
   intro?: RefObject<any> | undefined;
@@ -32,55 +13,42 @@ type NavbarProps = {
   setIsDarkMode?: Dispatch<SetStateAction<string | null>> | undefined;
 };
 
-const Navbar = ({ intro, skills, project, contact, scrollToSection, setIsDarkMode }: NavbarProps) => {
+const Navbar = ({ setIsDarkMode }: NavbarProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { width } = useWindowSize();
-  const [activeSection, setActiveSection] = useState<string | null>(null);
-  const refs = [intro, skills, project, contact];
 
   const toggleNavbar = () => {
     setIsExpanded(!isExpanded);
   };
 
-  const [selectedLink, setSelectedLink] = useState<string | undefined>(undefined);
+  const handleScrollCapture = (val?: any) => {
+    const checkActiveClass = document.querySelectorAll("ul li a");
+    const targetValue = val.target;
 
-  // const handleScroll = () => {
-  //   const pageYOffset = window.scrollY;
-  //   let newActiveSection: any = null;
-
-  //   refs?.forEach((section: any) => {
-  //     const sectionOffsetTop = section?.current?.offsetTop;
-  //     const sectionHeight = section?.current?.offsetHeight;
-  //     if (pageYOffset >= sectionOffsetTop && pageYOffset >= sectionOffsetTop - sectionHeight) {
-  //       newActiveSection = section.current.id;
-  //     }
-  //   });
-  //   console.log({ refs, newActiveSection });
-
-  //   localStorage.setItem("activeSection", newActiveSection);
-  //   setActiveSection(newActiveSection);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleClick);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleClick);
-  //   };
-  // }, []);
-
-  useEffect(() => {
-    // Add event listener for scroll
-    Events.scrollEvent.register("begin", (to, element) => {
-      // Update selectedLink on scroll
-      console.log(element.id);
-      setSelectedLink(element.id);
+    // Remove "active" class from all elements
+    Array.from(checkActiveClass).forEach((ele) => {
+      ele.classList.remove("active");
     });
 
-    return () => {
-      // Remove event listener when the component is unmounted
-      Events.scrollEvent.remove("begin");
-    };
-  }, []);
+    // If the targetValue is not provided or doesn't have the "active" class, add "active" to the Intro element
+    if (!targetValue || !targetValue.classList.contains("active")) {
+      const introElement = document.querySelector("ul li a.intro");
+
+      if (introElement) {
+        introElement.classList.add("active");
+      }
+    }
+
+    // Add "active" class to the desired element
+    if (!targetValue?.className) {
+      Array.from(checkActiveClass).forEach((ele) => {
+        if (ele?.innerHTML?.toLowerCase() === targetValue?.innerHTML?.toLowerCase()) {
+          ele.classList.add("active");
+        }
+      });
+    }
+    width && width < 990 && toggleNavbar();
+  };
 
   return (
     <>
@@ -88,56 +56,38 @@ const Navbar = ({ intro, skills, project, contact, scrollToSection, setIsDarkMod
         <nav className={`navbar ${isExpanded ? "expanded" : "collapsed"}`}>
           <ul className={width && width < 990 && !isExpanded ? "navbar-display" : ""}>
             <li className=''>
-              <Link
-                className={refs?.[0]?.current?.id === selectedLink ? "active" : ""}
-                // activeClass={refs?.[1]?.current?.id === selectedLink ? "active" : ""}
-                to='intro'
-                spy={true}
-                smooth={true}
-                offset={-150}
-                duration={100}
-              >
+              <Link to='intro' spy={true} smooth={true} offset={-150} duration={100} onClick={handleScrollCapture}>
                 Intro
               </Link>
             </li>
             <li>
               <Link
-                className={refs?.[1]?.current?.id === selectedLink ? "active" : ""}
-                // activeClass={refs?.[1]?.current?.id === selectedLink ? "active" : ""}
                 to='skills'
                 spy={true}
                 smooth={true}
                 offset={-30}
                 duration={100}
                 isDynamic={true}
+                onClick={handleScrollCapture}
               >
                 Skills
               </Link>
             </li>
             <li>
               <Link
-                className={refs?.[2]?.current?.id === selectedLink ? "active" : ""}
-                // activeClass={refs?.[1]?.current?.id === selectedLink ? "active" : ""}
                 to='project'
                 spy={true}
                 smooth={true}
                 offset={-30}
                 duration={100}
                 isDynamic={true}
+                onClick={handleScrollCapture}
               >
                 Project
               </Link>
             </li>
             <li>
-              <Link
-                className={refs?.[3]?.current?.id === selectedLink ? "active" : ""}
-                // activeClass={refs?.[1]?.current?.id === selectedLink ? "active" : ""}
-                to='contact'
-                spy={true}
-                smooth={true}
-                offset={-10}
-                duration={100}
-              >
+              <Link to='contact' spy={true} smooth={true} offset={-30} duration={100} onClick={handleScrollCapture}>
                 Contact
               </Link>
             </li>

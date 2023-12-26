@@ -1,5 +1,4 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 import "./App.css";
 
 import Navbar from "./components/navbar/Navbar";
@@ -12,18 +11,11 @@ import Contact from "./pages/contact/Contact";
 import useTheme from "./hooks/useTheme";
 
 function App() {
-  const { intro, skills, project, contact, scrollToSection } = useScrollToSection();
+  const { intro, skills, project, contact } = useScrollToSection();
   const { isDarkMode, setIsDarkMode } = useTheme();
   return (
     <div className='app'>
-      <Navbar
-        intro={intro}
-        skills={skills}
-        project={project}
-        contact={contact}
-        scrollToSection={scrollToSection}
-        setIsDarkMode={setIsDarkMode}
-      />
+      <Navbar setIsDarkMode={setIsDarkMode} />
       <Particle isDarkMode={isDarkMode} />
       <main>
         <Intro intro={intro} />
