@@ -14,14 +14,14 @@ function App() {
   const { intro, skills, project, contact } = useScrollToSection();
   const { isDarkMode, setIsDarkMode } = useTheme();
   return (
-    <div className='app'>
+    <div className="app">
       <Navbar setIsDarkMode={setIsDarkMode} />
       <Particle isDarkMode={isDarkMode} />
       <main>
         <Intro intro={intro} />
         <Skills skills={skills} isDarkMode={isDarkMode} />
-        <Project project={project} />
-        <Contact contact={contact} />
+        {/* <Project project={project} /> */}
+        {/* <Contact contact={contact} /> */}
       </main>
     </div>
   );

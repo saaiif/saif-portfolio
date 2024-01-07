@@ -15,12 +15,12 @@
 
   &--skills {
     display: flex;
-    align-items: center;
     justify-content: space-around;
   }
 
   &--languages {
     h2 {
+      margin-top: 2rem;
       font-family: "DynaPuff";
       font-weight: 400;
       margin-bottom: 10px;
@@ -33,10 +33,11 @@
       height: fit-content;
       background-color: var(--skills-card-background-color);
       padding: 2rem;
-      border-radius: 4%;
+      border-radius: 3%;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      box-shadow: 0px 2px 15px -3px var(--box-shadow);
     }
 
     li {
@@ -66,6 +67,9 @@
 .SpinIcon {
   animation: rotating 4s linear infinite;
 }
+.ZoomIcon {
+  animation: zoom 0.5s linear infinite;
+}
 @keyframes rotating {
   from {
     transform: rotate(0deg);
@@ -73,5 +77,36 @@
 
   to {
     transform: rotate(360deg);
+  }
+}
+@keyframes zoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 990px) {
+  .skills-page {
+    height: 100%;
+    &--skills {
+      display: block;
+      margin: 1rem auto;
+    }
+    &--languages {
+      margin: 2rem 0;
+    }
+  }
+}
+@media (max-width: 800px) {
+  .skills-page {
+    &--languages {
+      h2 {
+        font-size: 5vw;
+      }
+    }
   }
 }

@@ -1,17 +1,40 @@
 import React, { RefObject } from "react";
-import { CssIcon, GitIcon, HtmlIcon, JSIcon, NextIcon, ReactIcon, TSIcon } from "../../assets/icons/skills";
-import "./skills.scss";
+import {
+  AntDIcon,
+  BootStrapIcon,
+  ContextAPIcon,
+  CssIcon,
+  FirebaseIcon,
+  GitIcon,
+  GraphQLIcon,
+  HtmlIcon,
+  JSIcon,
+  MUIcon,
+  NextIcon,
+  NodeIcon,
+  ReactIcon,
+  ReduxIcon,
+  TSIcon,
+  TailwindIcon,
+} from "../../assets/icons/skills";
+import "./Skills.scss";
+
 type SkillsProps = {
   skills: RefObject<any> | undefined;
   isDarkMode: string | null;
 };
+
+const learningInProgress = ["Node.JS", "GraphQL", "Others new tech"];
+
 function Skills({ skills, isDarkMode }: SkillsProps) {
+  console.log({ isDarkMode });
   return (
-    <section className='skills-page' ref={skills} id='skills'>
-      <h1 datatype='Skills'>Skills</h1>
-      <div className='skills-page--skills'>
-        <div className='skills-page--languages'>
-          <h2 datatype='Skills'>Languages/Libraries</h2>
+    <section className="skills-page" ref={skills} id="skills">
+      <h1 datatype="Skills">Skills</h1>
+      <div className="skills-page--skills">
+        {/* languages */}
+        <div className="skills-page--languages">
+          <h2 datatype="Skills">Languages/Libraries</h2>
           <ul>
             <li>
               <HtmlIcon />
@@ -26,42 +49,76 @@ function Skills({ skills, isDarkMode }: SkillsProps) {
               <span>JavaScript</span>
             </li>
             <li>
+              <ReactIcon className="SpinIcon" />
+              <span>React</span>
+            </li>
+            <li>
+              <NextIcon />
+              <span>Next.JS</span>
+            </li>
+            <li>
               <TSIcon />
               <span>TypeScript</span>
             </li>
             <li>
-              <ReactIcon className='SpinIcon' />
-              <span>React</span>
+              <FirebaseIcon />
+              <span>Firebase</span>
             </li>
             <li>
-              <NextIcon fill={isDarkMode === "dark" ? "#7be5be" : "#000000"} />
-              <span>Next.JS</span>
+              <ReduxIcon />
+              <span>Redux (thunk | saga)</span>
+            </li>
+            <li>
+              <ContextAPIcon className="ZoomIcon" />
+              <span>Context API</span>
             </li>
           </ul>
         </div>
-        <div className='skills-page--languages'>
-          <h2 datatype='Skills'>Devtools</h2>
+
+        <div className="skills-page--languages">
+          <h2 datatype="Skills">CSS Frameworks</h2>
+          <ul>
+            <li>
+              <MUIcon />
+              <span>Material UI</span>
+            </li>
+            <li>
+              <AntDIcon />
+              <span>Ant Design</span>
+            </li>
+            <li>
+              <BootStrapIcon />
+              <span>Bootstrap</span>
+            </li>
+            <li>
+              <TailwindIcon />
+              <span>Tailwind CSS</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* devtools */}
+        <div className="skills-page--languages">
+          <h2 datatype="Skills">Devtools</h2>
           <ul>
             <li>
               <GitIcon />
               <span>Git</span>
             </li>
           </ul>
-        </div>
-        <div className='skills-page--languages'>
-          <h2 datatype='Skills'>Learning In Progress</h2>
+          <h2 datatype="Skills">Learn in progress</h2>
           <ul>
             <li>
-              <HtmlIcon />
-              <span>NodeJS</span>
+              <NodeIcon />
+              <span>Node.JS</span>
             </li>
             <li>
-              <CssIcon />
+              <GraphQLIcon />
               <span>GraphQL</span>
             </li>
+            <br />
             <li>
-              <NextIcon fill={isDarkMode === "dark" ? "#7be5be" : "#000000"} />
-              <span>Next.JS</span>
+              <span>Others new tech...</span>
             </li>
           </ul>
         </div>
@@ -70,75 +127,4 @@ function Skills({ skills, isDarkMode }: SkillsProps) {
   );
 }
 
-// <section className='skills-page' ref={skills} id='skills'>
-//   <div className='skills-page--content'>
-//     <h1 datatype='Skills'>Skills</h1>
-
-//     <div className='skills-page--skills'>
-//       <div className='languages'>
-//         <h2 datatype='Skills'>Languages</h2>
-//         <ul>
-//           <li>
-//             <HtmlIcon fill={!darkMode ? "#000" : "#fff"} />
-//             <span>HTML5</span>
-//           </li>
-//           <li>
-//             <HtmlIcon fill='#fff' />
-//             <span>HTML5</span>
-//           </li>
-//           <li>
-//             <HtmlIcon fill='#fff' />
-//             <span>HTML5</span>
-//           </li>
-//           <li>
-//             <HtmlIcon fill='#fff' />
-//             <span>HTML5</span>
-//           </li>
-//           <li>
-//             <HtmlIcon fill='#fff' />
-//             <span>HTML5</span>
-//           </li>
-//         </ul>
-//       </div>
-
-//       {/* <div className='devtools'>
-//         <h2 datatype='Skills'>Dev Tools</h2>
-//         <ul>
-//           <li>
-//             <HtmlIcon fill='#fff' />
-//             <span>Git</span>
-//           </li>
-//         </ul>
-//       </div> */}
-
-//       {/* <div className='devtools'>
-//         <h2 datatype='Skills'>CSS Frameworks</h2>
-//         <ul>
-//           <li>
-//             <img style={{ width: "24px" }} src={BootstrapIcon} alt='Bootstrap Icon' />
-//             <span>Bootstrap</span>
-//           </li>
-//           <li>
-//             <img style={{ width: "24px" }} src={MaterialUI} alt='Material UI' />
-//             <span>Material UI</span>
-//           </li>
-//           <li>
-//             <img style={{ width: "24px" }} src={TailwindCSS} alt='Bootstrap Icon' />
-//             <span>TailWind CSS</span>
-//           </li>
-//           <li>
-//             <img style={{ width: "24px" }} src={MaterializeIcon} alt='Materialize Icon' />
-//             <span>Materialize CSS</span>
-//           </li>
-//         </ul>
-//       </div> */}
-//     </div>
-
-//     <p>
-//       You must be wondering what I have done with all the things above.
-//       <br /> Well,
-//       <Link to='/project'> here you go</Link>.
-//     </p>
-//   </div>
-// </section>
 export default Skills;

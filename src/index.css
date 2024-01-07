@@ -9,7 +9,7 @@
   --box-shadow: rgba(0, 0, 0, 0.3);
   --menu-background: rgba(130, 197, 130, 0.971);
   --background-image: url("/src/assets/images/lightbackground.svg");
-  --skills-card-background-color: #0d1f22;
+  --skills-card-background-color: #0d1f22b3;
 }
 * {
   padding: 0;
@@ -35,7 +35,7 @@ body {
   --box-shadow: rgba(0, 0, 0, 0.3);
   --menu-background: rgba(130, 197, 130, 0.883);
   --background-image: url("/src/assets/images/lightbackground.svg");
-  --skills-card-background-color: #0d1f22;
+  --skills-card-background-color: #0d1f22df;
 }
 
 [data-theme="dark"] {
@@ -48,7 +48,7 @@ body {
   --menu-background: #1a331a97;
   --box-shadow: #d4f7d7;
   --background-image: url("/src/assets/images/darkbackground.svg");
-  --skills-card-background-color: #6f732f;
+  --skills-card-background-color: #46732f53;
 }
 
 h1,
