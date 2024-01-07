@@ -1,5 +1,5 @@
 import React, { RefObject } from "react";
-import { CssIcon, GitIcon, HtmlIcon, JSIcon, NextIcon, ReactIcon } from "../../assets/icons/skills";
+import { CssIcon, GitIcon, HtmlIcon, JSIcon, NextIcon, ReactIcon, TSIcon } from "../../assets/icons/skills";
 import "./skills.scss";
 type SkillsProps = {
   skills: RefObject<any> | undefined;
@@ -26,65 +26,8 @@ function Skills({ skills, isDarkMode }: SkillsProps) {
               <span>JavaScript</span>
             </li>
             <li>
-              <ReactIcon className='SpinIcon' />
-              <span>React</span>
-            </li>
-            <li>
-              <NextIcon fill={isDarkMode === "dark" ? "#7be5be" : "#000000"} />
-              <span>Next.JS</span>
-            </li>
-          </ul>
-        </div>
-        <div className='skills-page--languages'>
-          <h2 datatype='Skills'>Devtools</h2>
-          <ul>
-            <li>
-              <GitIcon />
-              <span>Git</span>
-            </li>
-          </ul>
-        </div>
-        <div className='skills-page--languages'>
-          <h2 datatype='Skills'>Languages/Libraries</h2>
-          <ul>
-            <li>
-              <HtmlIcon />
-              <span>HTML5</span>
-            </li>
-            <li>
-              <CssIcon />
-              <span>CSS3</span>
-            </li>
-            <li>
-              <JSIcon />
-              <span>JavaScript</span>
-            </li>
-            <li>
-              <ReactIcon className='SpinIcon' />
-              <span>React</span>
-            </li>
-            <li>
-              <NextIcon />
-              <span>Next.JS</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className='skills-page--skills'>
-        <div className='skills-page--languages'>
-          <h2 datatype='Skills'>Languages/Libraries</h2>
-          <ul>
-            <li>
-              <HtmlIcon />
-              <span>HTML5</span>
-            </li>
-            <li>
-              <CssIcon />
-              <span>CSS3</span>
-            </li>
-            <li>
-              <JSIcon />
-              <span>JavaScript</span>
+              <TSIcon />
+              <span>TypeScript</span>
             </li>
             <li>
               <ReactIcon className='SpinIcon' />
@@ -106,26 +49,18 @@ function Skills({ skills, isDarkMode }: SkillsProps) {
           </ul>
         </div>
         <div className='skills-page--languages'>
-          <h2 datatype='Skills'>Languages/Libraries</h2>
+          <h2 datatype='Skills'>Learning In Progress</h2>
           <ul>
             <li>
               <HtmlIcon />
-              <span>HTML5</span>
+              <span>NodeJS</span>
             </li>
             <li>
               <CssIcon />
-              <span>CSS3</span>
+              <span>GraphQL</span>
             </li>
             <li>
-              <JSIcon />
-              <span>JavaScript</span>
-            </li>
-            <li>
-              <ReactIcon className='SpinIcon' />
-              <span>React</span>
-            </li>
-            <li>
-              <NextIcon />
+              <NextIcon fill={isDarkMode === "dark" ? "#7be5be" : "#000000"} />
               <span>Next.JS</span>
             </li>
           </ul>
