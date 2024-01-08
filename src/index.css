@@ -5,7 +5,7 @@
   --secondary-color: #7be5be;
   --accent-color: #2acbb8;
   --text-color: #082b0b;
-  --active-text: #67d448;
+  --active-text: rgba(77, 54, 208, 1);
   --box-shadow: rgba(0, 0, 0, 0.3);
   --menu-background: rgba(130, 197, 130, 0.971);
   --background-image: url("/src/assets/images/lightbackground.svg");

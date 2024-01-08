@@ -4,7 +4,7 @@ import Resume from "./Resume";
 import MyImage from "../../assets/images/profile.jpeg";
 import "./Intro.scss";
 
-function Intro({ intro }: any) {
+function Intro({ intro, handleDownloadResume}: any) {
   return (
     <motion.section className="intro" ref={intro} id="intro">
       <div className="intro--left">
@@ -66,7 +66,7 @@ function Intro({ intro }: any) {
             duration: 0.7,
           }}
         >
-          <Resume />
+          <Resume handleDownloadResume={handleDownloadResume} />
         </motion.h1>
       </div>
     </motion.section>
