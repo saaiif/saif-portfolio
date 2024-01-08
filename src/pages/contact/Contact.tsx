@@ -1,4 +1,4 @@
-import React from "react";
+import React, { RefObject } from "react";
 import "./Contact.scss";
 import { motion, useScroll } from "framer-motion";
 import MyImage from "../../assets/images/profile.jpeg";
@@ -11,14 +11,29 @@ import {
   LinkedinIcon,
   InstagramIcon,
 } from "../../assets/icons/Social";
-function Contact({ contact }: any) {
+
+type ContactProps = {
+  contact: RefObject<any> | undefined;
+  isDarkMode: string | null;
+};
+
+function Contact({ contact, isDarkMode }: ContactProps) {
   const { scrollYProgress } = useScroll({
     target: contact,
     offset: ["start end", "end end"],
   });
+  const fill = isDarkMode === "light" ? "#3a3e0a" : "#20cfac";
+  const icons = [
+    <GithubIcon fill={fill} />,
+    <LinkedinIcon fill={fill} />,
+    <InstagramIcon fill={fill} />,
+  ];
 
-  const icons = [<GithubIcon />, <LinkedinIcon />, <InstagramIcon />];
-
+  const links = [
+    import.meta.env.VITE_GITHUB_LINK,
+    import.meta.env.VITE_LINKEDIN_LINK,
+    import.meta.env.VITE_INSTA_LINK,
+  ];
   return (
     <motion.section
       style={{ scale: scrollYProgress, opacity: scrollYProgress }}
@@ -33,13 +48,15 @@ function Contact({ contact }: any) {
         <ul>
           {icons?.map((icon, index) => (
             <li>
-              {icon}
+              <a href={links[index]} target="_blank" rel="">
+                {icon}
+              </a>
               <p
                 style={{
                   visibility: "hidden",
                 }}
               >
-                {index}
+                1 + index
               </p>
             </li>
           ))}

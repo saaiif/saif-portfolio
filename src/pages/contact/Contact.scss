@@ -19,13 +19,13 @@
       display: flex;
     }
     li {
-      font-size: 1.2em;
       list-style-type: none;
+      width: min-content;
     }
-    li > svg {
+    li > a > svg {
       cursor: pointer;
       max-width: 2rem;
-      margin-right: 10px;
+      margin-right: 0.5rem;
       height: fit-content;
     }
   }

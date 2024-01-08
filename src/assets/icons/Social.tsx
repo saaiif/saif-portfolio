@@ -1,8 +1,13 @@
 import React from "react";
 
-export const GithubIcon = () => {
+type SocialIconProps = {
+  className?: string;
+  fill?: string;
+};
+
+export const GithubIcon = ({ fill }: SocialIconProps) => {
   return (
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill={fill}>
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
       <g
         id="SVGRepo_tracerCarrier"
@@ -17,7 +22,7 @@ export const GithubIcon = () => {
     </svg>
   );
 };
-export const LinkedinIcon = () => {
+export const LinkedinIcon = ({ fill }: SocialIconProps) => {
   return (
     <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -28,9 +33,31 @@ export const LinkedinIcon = () => {
       ></g>
       <g id="SVGRepo_iconCarrier">
         <path
-          fill="#0A66C2"
+          fill={fill}
           d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"
         ></path>
+      </g>
+    </svg>
+  );
+};
+export const InstagramIcon = ({ fill }: SocialIconProps) => {
+  return (
+    <svg
+      fill={fill}
+      width="220px"
+      height="220px"
+      viewBox="0 0 32 32"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g
+        id="SVGRepo_tracerCarrier"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      ></g>
+      <g id="SVGRepo_iconCarrier">
+        <path d="M20.445 5h-8.891A6.559 6.559 0 0 0 5 11.554v8.891A6.559 6.559 0 0 0 11.554 27h8.891a6.56 6.56 0 0 0 6.554-6.555v-8.891A6.557 6.557 0 0 0 20.445 5zm4.342 15.445a4.343 4.343 0 0 1-4.342 4.342h-8.891a4.341 4.341 0 0 1-4.341-4.342v-8.891a4.34 4.34 0 0 1 4.341-4.341h8.891a4.342 4.342 0 0 1 4.341 4.341l.001 8.891z"></path>
+        <path d="M16 10.312c-3.138 0-5.688 2.551-5.688 5.688s2.551 5.688 5.688 5.688 5.688-2.551 5.688-5.688-2.55-5.688-5.688-5.688zm0 9.163a3.475 3.475 0 1 1-.001-6.95 3.475 3.475 0 0 1 .001 6.95zM21.7 8.991a1.363 1.363 0 1 1-1.364 1.364c0-.752.51-1.364 1.364-1.364z"></path>
       </g>
     </svg>
   );
