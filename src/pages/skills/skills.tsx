@@ -1,4 +1,5 @@
 import React, { RefObject } from "react";
+import { motion, useScroll } from "framer-motion";
 import {
   AntDIcon,
   BootStrapIcon,
@@ -27,11 +28,18 @@ type SkillsProps = {
 const learningInProgress = ["Node.JS", "GraphQL", "Others new tech"];
 
 function Skills({ skills, isDarkMode }: SkillsProps) {
-  console.log({ isDarkMode });
+  const { scrollYProgress } = useScroll({
+    target: skills,
+    offset: ["start end", "end end"],
+  });
+
   return (
-    <section className="skills-page" ref={skills} id="skills">
+    <section ref={skills} className="skills-page" id="skills">
       <h1 datatype="Skills">Skills</h1>
-      <div className="skills-page--skills">
+      <motion.div
+        style={{ scale: scrollYProgress, opacity: scrollYProgress }}
+        className="skills-page--skills"
+      >
         {/* languages */}
         <div className="skills-page--languages">
           <h2 datatype="Skills">Languages/Libraries</h2>
@@ -118,11 +126,11 @@ function Skills({ skills, isDarkMode }: SkillsProps) {
             </li>
             <br />
             <li>
-              <span>Others new tech...</span>
+              <span>Other new tech...</span>
             </li>
           </ul>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

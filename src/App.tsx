@@ -21,7 +21,7 @@ function App() {
         <Intro intro={intro} />
         <Skills skills={skills} isDarkMode={isDarkMode} />
         {/* <Project project={project} /> */}
-        {/* <Contact contact={contact} /> */}
+        <Contact contact={contact} />
       </main>
     </div>
   );

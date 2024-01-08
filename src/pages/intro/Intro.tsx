@@ -6,7 +6,7 @@ import "./Intro.scss";
 
 function Intro({ intro }: any) {
   return (
-    <section className="intro" ref={intro} id="intro">
+    <motion.section className="intro" ref={intro} id="intro">
       <div className="intro--left">
         <div className="intro--img">
           <motion.div
@@ -69,7 +69,7 @@ function Intro({ intro }: any) {
           <Resume />
         </motion.h1>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

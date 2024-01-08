@@ -12,7 +12,12 @@ main {
   flex-direction: column;
   justify-content: center;
   gap: 8em;
-  /* margin: 5rem 0; */
   width: 100%;
   z-index: 1;
+}
+
+@media (max-width: 750px) {
+  .app {
+    margin: 0 5%;
+  }
 }
