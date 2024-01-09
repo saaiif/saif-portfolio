@@ -38,37 +38,38 @@ function Contact({ contact, isDarkMode, resumeDownLoad }: ContactProps) {
   ];
 
   return (
-    <motion.section
-      style={{ scale: scrollYProgress, opacity: scrollYProgress }}
-      className="contact"
-      ref={contact}
-      id="contact"
-    >
-      <h1>Let's work together 🤝</h1>
+    <motion.div style={{ scale: scrollYProgress, opacity: scrollYProgress }}>
+      <motion.section className="contact" ref={contact} id="contact">
+        <h1>Let's work together 🤝</h1>
+        <code>
+          You can reach out to me directly on <span>webbysaif@gmail.com</span>{" "}
+          or fill this form below.
+        </code>
 
-      <ContactForm isDarkMode={isDarkMode} resumeDownLoad={resumeDownLoad} />
-      {resumeDownLoad ? (
-        <div className="marquee">{import.meta.env.VITE_RESUME_ALERT}</div>
-      ) : null}
-      <div className="contact--social-links">
-        <ul>
-          {icons?.map((icon, index) => (
-            <li>
-              <a href={links[index]} target="_blank" rel="">
-                {icon}
-              </a>
-              <p
-                style={{
-                  visibility: "hidden",
-                }}
-              >
-                1 + index
-              </p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </motion.section>
+        <ContactForm isDarkMode={isDarkMode} resumeDownLoad={resumeDownLoad} />
+        {resumeDownLoad ? (
+          <div className="marquee">{import.meta.env.VITE_RESUME_ALERT}</div>
+        ) : null}
+        <div className="contact--social-links">
+          <ul>
+            {icons?.map((icon, index) => (
+              <li>
+                <a href={links[index]} target="_blank" rel="">
+                  {icon}
+                </a>
+                <p
+                  style={{
+                    visibility: "hidden",
+                  }}
+                >
+                  1 + index
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </motion.section>
+    </motion.div>
   );
 }
 

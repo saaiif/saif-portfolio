@@ -8,9 +8,16 @@
   align-items: center;
   position: relative;
   h1 {
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     font-size: 4vw !important;
     font-family: "DynaPuff" !important;
+  }
+  code {
+    margin-bottom: 1rem;
+    font-size: 1vw;
+  }
+  code > span {
+    text-decoration: 2px #e4da22 underline;
   }
   &--social-links {
     position: absolute;
@@ -139,7 +146,11 @@ input[type="submit"]:active {
 @media (max-width: 750px) {
   .contact {
     h1 {
-      font-size: 7vw !important;
+      font-size: 7.5vw !important;
+    }
+    code {
+      font-size: 2vw !important;
+      font-weight: bold;
     }
   }
 }
@@ -173,7 +184,7 @@ input[type="submit"]:active {
   100% {
     transform: translateX(-100%);
     opacity: 0.3;
-    display: none;
+    visibility: hidden;
   }
 }
 
