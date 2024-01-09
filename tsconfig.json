@@ -30,7 +30,7 @@
     "lib": ["es2022", "es5", "dom", "dom.iterable"],
     /* If your code doesn't run in the DOM: */
     "lib": ["dom", "dom.iterable", "esnext"],
-    "types": ["web"]
+    "types": ["web", "vite/client"]
   },
   "include": ["d.ts"]
 }

@@ -1,4 +1,4 @@
-import React, { RefObject } from "react";
+import React, { RefObject, useState } from "react";
 import "./Contact.scss";
 import { motion, useScroll } from "framer-motion";
 import MyImage from "../../assets/images/profile.jpeg";
@@ -15,14 +15,16 @@ import {
 type ContactProps = {
   contact: RefObject<any> | undefined;
   isDarkMode: string | null;
+  resumeDownLoad: Boolean | false;
 };
 
-function Contact({ contact, isDarkMode }: ContactProps) {
+function Contact({ contact, isDarkMode, resumeDownLoad }: ContactProps) {
   const { scrollYProgress } = useScroll({
     target: contact,
     offset: ["start end", "end end"],
   });
   const fill = isDarkMode === "light" ? "#3a3e0a" : "#20cfac";
+
   const icons = [
     <GithubIcon fill={fill} />,
     <LinkedinIcon fill={fill} />,
@@ -34,6 +36,7 @@ function Contact({ contact, isDarkMode }: ContactProps) {
     import.meta.env.VITE_LINKEDIN_LINK,
     import.meta.env.VITE_INSTA_LINK,
   ];
+
   return (
     <motion.section
       style={{ scale: scrollYProgress, opacity: scrollYProgress }}
@@ -43,7 +46,10 @@ function Contact({ contact, isDarkMode }: ContactProps) {
     >
       <h1>Let's work together 🤝</h1>
 
-      <ContactForm />
+      <ContactForm isDarkMode={isDarkMode} resumeDownLoad={resumeDownLoad} />
+      {resumeDownLoad ? (
+        <div className="marquee">{import.meta.env.VITE_RESUME_ALERT}</div>
+      ) : null}
       <div className="contact--social-links">
         <ul>
           {icons?.map((icon, index) => (

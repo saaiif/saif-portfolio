@@ -2,12 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import pdf from "../../assets/document/Saifmujawar.pdf";
 import { useWindowSize } from "../../hooks/useWindowSize";
-import { Navigate, useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
-function Resume() {
+function Resume({ setResumeDownload }: any) {
   const [loader, setLoader] = useState(true);
-  const navigate = useNavigate();
 
   const { width } = useWindowSize();
 
@@ -16,6 +15,24 @@ function Resume() {
       setLoader(false);
     }
   }
+  const notify = () => {
+    setTimeout(() => {
+      toast("No Permission to download, please contact for resume.", {
+        icon: "👏",
+        style: {
+          borderRadius: "10px",
+          backgroundColor: "#333",
+          color: "#fff",
+        },
+
+        // Change colors of success/error/loading icon
+        iconTheme: {
+          primary: "#000",
+          secondary: "#fff",
+        },
+      });
+    }, 1000);
+  };
 
   return (
     <div className="resume">
@@ -36,9 +53,12 @@ function Resume() {
           )}
         </Document>
       </div>
-
       {!loader && (
-        <a className="cssbuttons-io-button" href="#contact">
+        <a
+          className="cssbuttons-io-button"
+          href="#contact"
+          onClick={() => setResumeDownload(true)}
+        >
           <svg
             height="24"
             width="24"
@@ -54,6 +74,7 @@ function Resume() {
           <span>Download CV</span>
         </a>
       )}
+      <Toaster position="bottom-center" reverseOrder={false} />
     </div>
   );
 }

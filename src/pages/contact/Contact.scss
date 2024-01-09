@@ -143,3 +143,42 @@ input[type="submit"]:active {
     }
   }
 }
+
+.toast-message {
+  width: 0;
+  margin: 1rem auto !important;
+  display: flex !important;
+  align-items: center !important;
+}
+.Toastify__close-button {
+  background-color: transparent !important;
+}
+.Toastify__close-button > svg {
+  margin: 0.25rem auto 0 auto !important;
+  color: var(--text-color);
+  background-color: var(--accent-color) !important;
+  padding: 0.1rem 0.1rem 0.1rem 0.2rem !important;
+  border-radius: 50%;
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+  align-items: center !important;
+  display: block !important;
+  justify-content: center !important;
+}
+
+@keyframes marqueeAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0.3;
+    display: none;
+  }
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  animation: marqueeAnimation 5s linear 1 forwards;
+}

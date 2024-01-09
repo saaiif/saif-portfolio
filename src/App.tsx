@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 import Navbar from "./components/navbar/Navbar";
@@ -13,15 +13,23 @@ import useTheme from "./hooks/useTheme";
 function App() {
   const { intro, skills, project, contact } = useScrollToSection();
   const { isDarkMode, setIsDarkMode } = useTheme();
+  const [resumeDownLoad, setResumeDownload] = useState<Boolean>(false);
   return (
     <div className="app">
-      <Navbar setIsDarkMode={setIsDarkMode} />
+      <Navbar
+        setIsDarkMode={setIsDarkMode}
+        setResumeDownload={setResumeDownload}
+      />
       <Particle isDarkMode={isDarkMode} />
       <main>
-        <Intro intro={intro} />
+        <Intro intro={intro} setResumeDownload={setResumeDownload} />
         <Skills skills={skills} isDarkMode={isDarkMode} />
         {/* <Project project={project} /> */}
-        <Contact contact={contact} isDarkMode={isDarkMode} />
+        <Contact
+          contact={contact}
+          isDarkMode={isDarkMode}
+          resumeDownLoad={resumeDownLoad}
+        />
       </main>
     </div>
   );

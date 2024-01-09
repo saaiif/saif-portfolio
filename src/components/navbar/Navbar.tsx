@@ -24,9 +24,10 @@ type NavbarProps = {
   contact?: RefObject<any> | undefined;
   scrollToSection?: (val: RefObject<any> | undefined) => void;
   setIsDarkMode?: Dispatch<SetStateAction<string | null>> | undefined;
+  setResumeDownload: (val: Boolean) => void;
 };
 
-const Navbar = ({ setIsDarkMode }: NavbarProps) => {
+const Navbar = ({ setIsDarkMode, setResumeDownload }: NavbarProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { width } = useWindowSize();
   let audio = new Audio(ScrollAudio);
@@ -66,6 +67,7 @@ const Navbar = ({ setIsDarkMode }: NavbarProps) => {
     }
     audio.play();
     width && width < 990 && toggleNavbar();
+    setResumeDownload(false);
   };
 
   const handleSetActive = () => {

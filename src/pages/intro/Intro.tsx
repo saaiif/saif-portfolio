@@ -1,10 +1,15 @@
-import React from "react";
+import React, { RefObject } from "react";
 import { motion } from "framer-motion";
 import Resume from "./Resume";
 import MyImage from "../../assets/images/profile.jpeg";
 import "./Intro.scss";
 
-function Intro({ intro, handleDownloadResume}: any) {
+type IntroProps = {
+  intro: RefObject<any> | undefined;
+  setResumeDownload: (val: Boolean) => void;
+};
+
+function Intro({ intro, setResumeDownload }: IntroProps) {
   return (
     <motion.section className="intro" ref={intro} id="intro">
       <div className="intro--left">
@@ -66,7 +71,7 @@ function Intro({ intro, handleDownloadResume}: any) {
             duration: 0.7,
           }}
         >
-          <Resume handleDownloadResume={handleDownloadResume} />
+          <Resume setResumeDownload={setResumeDownload} />
         </motion.h1>
       </div>
     </motion.section>
