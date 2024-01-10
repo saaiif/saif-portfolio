@@ -1,4 +1,4 @@
-import React, { RefObject } from "react";
+import React, { RefObject, useEffect } from "react";
 import { motion, useScroll } from "framer-motion";
 import {
   AntDIcon,
@@ -19,6 +19,7 @@ import {
   TailwindIcon,
 } from "../../assets/icons/skills";
 import "./Skills.scss";
+import useScrollToAnimation from "../../hooks/useScrollAnimation";
 
 type SkillsProps = {
   skills: RefObject<any> | undefined;
@@ -28,15 +29,23 @@ type SkillsProps = {
 const learningInProgress = ["Node.JS", "GraphQL", "Others new tech"];
 
 function Skills({ skills, isDarkMode }: SkillsProps) {
-  const { scrollYProgress } = useScroll({
-    target: skills,
-    offset: ["start end", "start end"],
-  });
+  const { accessibilty, boxVariant, inView, control, sectionRef } =
+    useScrollToAnimation();
+
+  useEffect(() => {
+    accessibilty();
+  }, [control, inView]);
 
   return (
-    <motion.section ref={skills} className="skills-page" id="skills">
+    <section ref={skills} className="skills-page" id="skills">
       <h1 datatype="Skills">Skills</h1>
-      <div className="skills-page--skills">
+      <motion.div
+        ref={sectionRef}
+        variants={boxVariant}
+        initial="visible"
+        animate={control}
+        className="skills-page--skills"
+      >
         {/* languages */}
         <div className="skills-page--languages">
           <h2 datatype="Skills">Languages/Libraries</h2>
@@ -127,8 +136,8 @@ function Skills({ skills, isDarkMode }: SkillsProps) {
             </li>
           </ul>
         </div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 }
 

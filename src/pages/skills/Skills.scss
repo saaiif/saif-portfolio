@@ -97,7 +97,8 @@
     height: 100%;
     &--skills {
       display: block;
-      margin: 1rem auto;
+      width: max-content;
+      margin: 0 auto;
     }
     &--languages {
       margin: 2rem 0;

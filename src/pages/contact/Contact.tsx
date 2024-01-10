@@ -11,6 +11,7 @@ import {
   LinkedinIcon,
   InstagramIcon,
 } from "../../assets/icons/Social";
+import { Each } from "../../Utils";
 
 type ContactProps = {
   contact: RefObject<any> | undefined;
@@ -52,20 +53,23 @@ function Contact({ contact, isDarkMode, resumeDownLoad }: ContactProps) {
         ) : null} */}
         <div className="contact--social-links">
           <ul>
-            {icons?.map((icon, index) => (
-              <li>
-                <a href={links[index]} target="_blank" rel="">
-                  {icon}
-                </a>
-                <p
-                  style={{
-                    visibility: "hidden",
-                  }}
-                >
-                  1 + index
-                </p>
-              </li>
-            ))}
+            <Each
+              of={icons}
+              render={(icon, index) => (
+                <li>
+                  <a href={links[index]} target="_blank" rel="">
+                    {icon}
+                  </a>
+                  <p
+                    style={{
+                      visibility: "hidden",
+                    }}
+                  >
+                    1 + index
+                  </p>
+                </li>
+              )}
+            />
           </ul>
         </div>
       </motion.section>
