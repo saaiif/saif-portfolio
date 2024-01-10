@@ -24,7 +24,7 @@ function App() {
       <main>
         <Intro intro={intro} setResumeDownload={setResumeDownload} />
         <Skills skills={skills} isDarkMode={isDarkMode} />
-        {/* <Project project={project} /> */}
+        <Project project={project} />
         <Contact
           contact={contact}
           isDarkMode={isDarkMode}

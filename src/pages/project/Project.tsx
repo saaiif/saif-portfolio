@@ -4,71 +4,39 @@ import { motion } from "framer-motion";
 import MyImage from "../../assets/images/profile.jpeg";
 import useScrollToSection from "../../hooks/useScrollToSection";
 import Resume from "../intro/Resume";
-function Project({ project }: any) {
-  return (
-    <section className="project" ref={project} id="project">
-      <div className="intro--left">
-        <div className="intro--img">
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-          >
-            <img src={MyImage} alt="profile-pic" loading="lazy" />
-          </motion.div>
-          <motion.span
-            className="img-hand-wave"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 125,
-              delay: 0.5,
-              duration: 0.7,
-            }}
-          >
-            👋
-          </motion.span>
-        </div>
+import { Each } from "../../Utils";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
-        <div className="intro--text">
-          <motion.h1
-            className="intro--section"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 10 }}
-            transition={{
-              type: "spring",
-              stiffness: 20,
-              delay: 0.2,
-              duration: 0.7,
-            }}
-          >
-            <span className="intro--span">Hello, I'm Saif Mujawar.</span> <br />
-            <br />
-            I'm a <span className="intro--clip">Frontend developer </span>
-            with <span className="intro--span">4+ years</span> of experience. I
-            enjoy building
-            <span className="intro--italic intro--clip">
-              {" "}
-              sites & apps
-            </span>. <br /> My focus is{" "}
-            <span className="intro--underline">React</span>.
-          </motion.h1>
-        </div>
+const tabs = [
+  "All",
+  "HTML/CSS",
+  "JavaScript",
+  "React.JS",
+  "Next.JS",
+  "Fullstack",
+];
+function Project({ project }: any) {
+  const { width } = useWindowSize();
+  return (
+    <section className="projects" ref={project} id="project">
+      <h1 datatype="Skills">Projects</h1>
+      <div className="projects--tabs">
+        {width && width > 570 ? (
+          <Each of={tabs} render={(tab, index) => <button>{tab}</button>} />
+        ) : (
+          <select>
+            {tabs.map((tab) => (
+              <option value={tab}>{tab}</option>
+            ))}
+          </select>
+        )}
       </div>
-      <div className="intro--right">
-        <motion.h1
-          className="intro--section"
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 20,
-            delay: 0.2,
-            duration: 0.7,
-          }}
-        >
-          <Resume />
-        </motion.h1>
+      <div className="projects--cards">
+        <div className="card"></div>
+        <div className="card"></div>
+        <div className="card"></div>
+        <div className="card"></div>
+        <div className="card"></div>
       </div>
     </section>
   );
