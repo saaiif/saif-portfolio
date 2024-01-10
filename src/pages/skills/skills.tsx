@@ -36,17 +36,19 @@ function Skills({ skills, isDarkMode }: SkillsProps) {
     accessibilty();
   }, [control, inView]);
 
+  console.log({ sectionRef });
+
   return (
     <section ref={skills} className="skills-page" id="skills">
       <h1 datatype="Skills">Skills</h1>
+      {/* languages */}
       <motion.div
         ref={sectionRef}
         variants={boxVariant}
-        initial="visible"
+        initial="hidden"
         animate={control}
         className="skills-page--skills"
       >
-        {/* languages */}
         <div className="skills-page--languages">
           <h2 datatype="Skills">Languages/Libraries</h2>
           <ul>
