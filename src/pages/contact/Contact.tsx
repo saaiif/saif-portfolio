@@ -41,6 +41,9 @@ function Contact({ contact, isDarkMode, resumeDownLoad }: ContactProps) {
   return (
     <motion.div style={{ scale: scrollYProgress, opacity: scrollYProgress }}>
       <motion.section className="contact" ref={contact} id="contact">
+        {resumeDownLoad ? (
+          <div className="marquee">{import.meta.env.VITE_RESUME_ALERT}</div>
+        ) : null}
         <h1>Let's work together 🤝</h1>
         <code>
           You can reach out to me directly on <span>webbysaif@gmail.com</span>{" "}
@@ -48,9 +51,6 @@ function Contact({ contact, isDarkMode, resumeDownLoad }: ContactProps) {
         </code>
 
         <ContactForm isDarkMode={isDarkMode} resumeDownLoad={resumeDownLoad} />
-        {/* {resumeDownLoad ? (
-          <div className="marquee">{import.meta.env.VITE_RESUME_ALERT}</div>
-        ) : null} */}
         <div className="contact--social-links">
           <ul>
             <Each

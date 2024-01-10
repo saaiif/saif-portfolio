@@ -1,5 +1,5 @@
 import React, { RefObject, useEffect } from "react";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   AntDIcon,
   BootStrapIcon,
@@ -36,10 +36,8 @@ function Skills({ skills, isDarkMode }: SkillsProps) {
     accessibilty();
   }, [control, inView]);
 
-  console.log({ sectionRef });
-
   return (
-    <section ref={skills} className="skills-page" id="skills">
+    <section ref={sectionRef} className="skills-page" id="skills">
       <h1 datatype="Skills">Skills</h1>
       {/* languages */}
       <motion.div

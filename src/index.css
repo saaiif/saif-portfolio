@@ -7,7 +7,7 @@
   --text-color: #082b0b;
   --active-text: rgba(77, 54, 208, 1);
   --box-shadow: rgba(0, 0, 0, 0.3);
-  --menu-background: rgba(130, 197, 130, 0.971);
+  --menu-background: #0e220ee0;
   --background-image: url("/src/assets/images/lightbackground.svg");
   --skills-card-background-color: #0d1f22b3;
 }
@@ -33,9 +33,11 @@ body {
   --accent-color: #f6f03c;
   --secondary-color: #7be5be;
   --box-shadow: rgba(0, 0, 0, 0.3);
-  --menu-background: rgba(130, 197, 130, 0.883);
+  --menu-background: rgba(2, 16, 2, 0.883);
   --background-image: url("/src/assets/images/lightbackground.svg");
   --skills-card-background-color: #0d1f22df;
+  --menu-list: #c5ded5;
+  --active-text: #67d448;
 }
 
 [data-theme="dark"] {
@@ -45,7 +47,7 @@ body {
   --secondary-color: #d4f7f7;
   --accent-color: #941524;
   --active-text: #67d448;
-  --menu-background: #1a331a97;
+  --menu-background: #0e220ee0;
   --box-shadow: #d4f7d7;
   --background-image: url("/src/assets/images/darkbackground.svg");
   --skills-card-background-color: #46732f53;

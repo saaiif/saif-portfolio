@@ -101,7 +101,7 @@ const Navbar = ({ setIsDarkMode, setResumeDownload }: NavbarProps) => {
                 to="skills"
                 spy={true}
                 smooth={true}
-                offset={3}
+                offset={-30}
                 duration={100}
                 isDynamic={true}
                 onClick={handleScrollCapture}

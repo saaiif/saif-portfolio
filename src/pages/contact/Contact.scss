@@ -14,10 +14,11 @@
   }
   code {
     margin-bottom: 1rem;
-    font-size: 1vw;
+    font-size: 0.8vw;
   }
   code > span {
     text-decoration: 2px #e4da22 underline;
+    font-weight: bold;
   }
   &--social-links {
     position: absolute;
@@ -146,10 +147,10 @@ input[type="submit"]:active {
 @media (max-width: 750px) {
   .contact {
     h1 {
-      font-size: 7.5vw !important;
+      font-size: 8vw !important;
     }
     code {
-      font-size: 2vw !important;
+      font-size: 3vw !important;
       font-weight: bold;
     }
   }
@@ -181,6 +182,9 @@ input[type="submit"]:active {
   0% {
     opacity: 0;
   }
+  50% {
+    opacity: 0.6;
+  }
   100% {
     opacity: 1;
     visibility: hidden;
@@ -188,7 +192,13 @@ input[type="submit"]:active {
 }
 
 .marquee {
-  white-space: nowrap;
   overflow: hidden;
-  animation: marqueeAnimation 5s linear 1 forwards;
+  animation: marqueeAnimation 5s linear 2 forwards;
+  background: linear-gradient(120deg, #c65041, #f5473a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
+  font-size: 1rem;
+  word-break: break-all;
 }
