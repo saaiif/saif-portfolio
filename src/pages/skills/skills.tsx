@@ -30,13 +30,13 @@ const learningInProgress = ["Node.JS", "GraphQL", "Others new tech"];
 function Skills({ skills, isDarkMode }: SkillsProps) {
   const { scrollYProgress } = useScroll({
     target: skills,
-    offset: ["start end", "end end"],
+    offset: ["start end", "start end"],
   });
 
   return (
-    <section ref={skills} className="skills-page" id="skills">
+    <motion.section ref={skills} className="skills-page" id="skills">
       <h1 datatype="Skills">Skills</h1>
-      <motion.div className="skills-page--skills">
+      <div className="skills-page--skills">
         {/* languages */}
         <div className="skills-page--languages">
           <h2 datatype="Skills">Languages/Libraries</h2>
@@ -127,8 +127,8 @@ function Skills({ skills, isDarkMode }: SkillsProps) {
             </li>
           </ul>
         </div>
-      </motion.div>
-    </section>
+      </div>
+    </motion.section>
   );
 }
 

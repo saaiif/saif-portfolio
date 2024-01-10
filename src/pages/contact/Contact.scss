@@ -179,11 +179,10 @@ input[type="submit"]:active {
 
 @keyframes marqueeAnimation {
   0% {
-    transform: translateX(100%);
+    opacity: 0;
   }
   100% {
-    transform: translateX(-100%);
-    opacity: 0.3;
+    opacity: 1;
     visibility: hidden;
   }
 }

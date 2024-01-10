@@ -47,9 +47,9 @@ function Contact({ contact, isDarkMode, resumeDownLoad }: ContactProps) {
         </code>
 
         <ContactForm isDarkMode={isDarkMode} resumeDownLoad={resumeDownLoad} />
-        {resumeDownLoad ? (
+        {/* {resumeDownLoad ? (
           <div className="marquee">{import.meta.env.VITE_RESUME_ALERT}</div>
-        ) : null}
+        ) : null} */}
         <div className="contact--social-links">
           <ul>
             {icons?.map((icon, index) => (
