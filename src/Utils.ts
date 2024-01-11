@@ -5,8 +5,8 @@ export const darkMode = localStorage.getItem("selectedTheme")
   : localStorage.getItem("selectedTheme") === null;
 
 interface EachProps {
-  of: ReactNode[];
-  render: (item: ReactNode, index: number) => ReactNode;
+  of: ReactNode[] | any;
+  render: (item: ReactNode | any, index: number) => ReactNode;
 }
 
 export const Each: React.FC<EachProps> = ({ of, render }) => {

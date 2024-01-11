@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Admin Dashboard",
+    "image": "/src/assets/images/admindashboard.png",
+    "description": "The Admin Dashboard application utilizes ReactJS, Redux, Nivo Charts, and Context API to display comprehensive business data analysis with a variety of interactive charts.",
+    "techstack": "React JS, Context API, Nivo Charts, Material UI",
+    "url": "https://saif-admindashboard.netlify.app/",
+    "key": 4
+  },
+  {
+    "id": 2,
+    "name": "E-commerce Filter",
+    "image": "/src/assets/images/ecommercefiltercart.png",
+    "description": "The implemented ecommerce application utilizes React and Redux to provide a seamless user experience, allowing users to filter products by name, size, and price while easily managing their selections in the cart.",
+    "techstack": "React JS, Redux",
+    "url": "https://saif-ecommercefiltercart.netlify.app/",
+    "key": 4
+  },
+  {
+    "id": 6,
+    "name": "E-commerce Filter",
+    "image": "/src/assets/images/ecommercefiltercart.png",
+    "description": "The implemented ecommerce application utilizes React and Redux to provide a seamless user experience, allowing users to filter products by name, size, and price while easily managing their selections in the cart.",
+    "techstack": "React JS, Redux",
+    "url": "https://saif-ecommercefiltercart.netlify.app/",
+    "key": 4
+  },
+  {
+    "id": 3,
+    "name": "E-commerce Filter",
+    "image": "/src/assets/images/ecommercefiltercart.png",
+    "description": "The implemented ecommerce application utilizes React and Redux to provide a seamless user experience, allowing users to filter products by name, size, and price while easily managing their selections in the cart.",
+    "techstack": "React JS, Redux",
+    "url": "https://saif-ecommercefiltercart.netlify.app/",
+    "key": 4
+  },
+  {
+    "id": 4,
+    "name": "E-commerce Filter",
+    "image": "/src/assets/images/ecommercefiltercart.png",
+    "description": "The implemented ecommerce application utilizes React and Redux to provide a seamless user experience, allowing users to filter products by name, size, and price while easily managing their selections in the cart.",
+    "techstack": "React JS, Redux",
+    "url": "https://saif-ecommercefiltercart.netlify.app/",
+    "key": 4
+  },
+  {
+    "id": 5,
+    "name": "E-commerce Filter",
+    "image": "/src/assets/images/ecommercefiltercart.png",
+    "description": "The implemented ecommerce application utilizes React and Redux to provide a seamless user experience, allowing users to filter products by name, size, and price while easily managing their selections in the cart.",
+    "techstack": "React JS, Redux",
+    "url": "https://saif-ecommercefiltercart.netlify.app/",
+    "key": 4
+  }
+]

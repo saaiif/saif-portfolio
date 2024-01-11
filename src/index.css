@@ -10,6 +10,7 @@
   --menu-background: #0e220ee0;
   --background-image: url("/src/assets/images/lightbackground.svg");
   --skills-card-background-color: #0d1f22b3;
+  --nav-background: #ecf6e9;
 }
 * {
   padding: 0;
@@ -36,11 +37,13 @@ body {
   --menu-background: rgba(2, 16, 2, 0.883);
   --background-image: url("/src/assets/images/lightbackground.svg");
   --skills-card-background-color: #0d1f22df;
-  --menu-list: #c5ded5;
+  --menu-list: #b9c087;
   --active-text: #67d448;
+  --nav-background: #ecf6e9;
 }
 
 [data-theme="dark"] {
+  --nav-background: #0a2004;
   --text-color: #d4f7d7;
   --background: linear-gradient(to left, #263826, #030c03);
   --primary-color: #87d488;
@@ -68,26 +71,6 @@ html {
 
 h1 {
   font-size: 4.21rem; /* 67.36px */
-}
-
-h2 {
-  font-size: 3.158rem; /* 50.56px */
-}
-
-h3 {
-  font-size: 2.369rem; /* 37.92px */
-}
-
-h4 {
-  font-size: 1.777rem; /* 28.48px */
-}
-
-h5 {
-  font-size: 1.333rem; /* 21.28px */
-}
-
-small {
-  font-size: 0.75rem; /* 12px */
 }
 
 ul {
