@@ -45,9 +45,11 @@ function Project({ project }: any) {
             )}
           />
         ) : (
-          <select>
-            {tabs.map((tab, index) => (
-              <option value={tab} onChange={() => setClickedIndex(index)}>
+          <select
+            onChange={(e) => setClickedIndex(tabs.indexOf(e.target.value))}
+          >
+            {tabs.map((tab) => (
+              <option value={tab} key={tab}>
                 {tab}
               </option>
             ))}

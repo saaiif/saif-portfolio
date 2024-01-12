@@ -6,6 +6,12 @@
   justify-content: center;
   height: 100vh;
 
+  &--container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   &--left {
     display: flex;
     align-items: flex-start;
@@ -23,6 +29,12 @@
 
     .intro--clip {
       background: linear-gradient(120deg, #6bc641, #6cd3cd);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .name {
+      background: linear-gradient(90deg, #ff9933, #dbd3d3, #138808);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -114,6 +126,9 @@
   .intro {
     display: block;
     width: 100%;
+    &--container {
+      display: block;
+    }
     &--left {
       width: 100%;
       margin: 0 auto;
@@ -124,7 +139,7 @@
       text-align: center;
     }
     &--section {
-      font-size: 4vw;
+      font-size: 5vw;
     }
     &--right {
       margin: 0px auto;

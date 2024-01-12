@@ -7,11 +7,11 @@
   --text-color: #082b0b;
   --active-text: #67d448;
   --box-shadow: rgba(0, 0, 0, 0.3);
-  --menu-background: #0e220ee0;
+  --menu-background: #ecf6e9;
   --background-image: url("/src/assets/images/lightbackground.svg");
   --skills-card-background-color: #0d1f22b3;
   --nav-background: #ecf6e9;
-  --menu-list: #b9c087;
+  --menu-list: #0e0e0d;
 }
 * {
   padding: 0;
@@ -39,10 +39,10 @@ body {
   --accent-color: #f6f03c;
   --secondary-color: #7be5be;
   --box-shadow: rgba(0, 0, 0, 0.3);
-  --menu-background: rgba(2, 16, 2, 0.883);
+  --menu-background: #ecf6e9;
   --background-image: url("/src/assets/images/lightbackground.svg");
   --skills-card-background-color: #0d1f22df;
-  --menu-list: #b9c087;
+  --menu-list: #0e0e0d;
   --active-text: #67d448;
   --nav-background: #ecf6e9;
 }
@@ -59,6 +59,7 @@ body {
   --box-shadow: #d4f7d7;
   --background-image: url("/src/assets/images/darkbackground.svg");
   --skills-card-background-color: #46732f53;
+  --menu-list: #b9c087;
 }
 
 h1,
@@ -75,7 +76,7 @@ html {
 }
 
 h1 {
-  font-size: 4.21rem; /* 67.36px */
+  font-size: 3.21rem; /* 67.36px */
 }
 
 ul {

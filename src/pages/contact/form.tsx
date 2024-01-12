@@ -85,6 +85,7 @@ export default function ContactForm({ isDarkMode }: any) {
           required
           value={fullname}
           onChange={(e) => setFields({ fullname: e.target.value })}
+          autoComplete="off"
         />
 
         {errors.email && <p role="alert">{errors.email.message}</p>}
@@ -95,6 +96,7 @@ export default function ContactForm({ isDarkMode }: any) {
           required
           value={email}
           onChange={(e) => setFields({ email: e.target.value })}
+          autoComplete="off"
         />
 
         {errors.message && <p role="alert">{errors?.message?.message}</p>}
@@ -104,6 +106,7 @@ export default function ContactForm({ isDarkMode }: any) {
           required
           value={message}
           onChange={(e) => setFields({ message: e.target.value })}
+          autoComplete="off"
         />
         <input type="submit" />
       </form>

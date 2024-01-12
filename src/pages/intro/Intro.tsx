@@ -1,8 +1,9 @@
-import React, { RefObject } from "react";
+import React, { RefObject, useEffect } from "react";
 import { motion } from "framer-motion";
 import Resume from "./Resume";
 import MyImage from "../../assets/images/profile.jpeg";
 import "./Intro.scss";
+import useScrollToAnimation from "../../hooks/useScrollAnimation";
 
 type IntroProps = {
   intro: RefObject<any> | undefined;
@@ -10,70 +11,51 @@ type IntroProps = {
 };
 
 function Intro({ intro, setResumeDownload }: IntroProps) {
+  const { accessibilty, boxVariant, inView, control, sectionRef } =
+    useScrollToAnimation();
+
+  useEffect(() => {
+    accessibilty();
+  }, [control, inView]);
+
   return (
     <motion.section className="intro" ref={intro} id="intro">
-      <div className="intro--left">
-        <div className="intro--img">
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-          >
+      <motion.div
+        ref={sectionRef}
+        variants={boxVariant}
+        initial="hidden"
+        animate={control}
+       className="intro--container"
+      >
+        <div className="intro--left">
+          <div className="intro--img">
             <img src={MyImage} alt="profile-pic" loading="lazy" />
-          </motion.div>
-          <motion.span
-            className="img-hand-wave"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 125,
-              delay: 0.5,
-              duration: 0.7,
-            }}
-          >
-            👋
-          </motion.span>
-        </div>
+            <span className="img-hand-wave">👋</span>
+          </div>
 
-        <div className="intro--text">
-          <motion.h1
-            className="intro--section"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 10 }}
-            transition={{
-              type: "spring",
-              stiffness: 20,
-              delay: 0.2,
-              duration: 0.7,
-            }}
-          >
-            <span className="intro--span">Hello, I'm Saif Mujawar.</span> <br />
-            <br />A <span className="intro--clip">Frontend developer </span>
-            with <span className="intro--span">4+ years</span> of experience. I
-            enjoy building
-            <span className="intro--italic intro--clip">
-              {" "}
-              sites & apps
-            </span>. <br /> <br /> My focus is
-            <span className="intro--underline"> React (Next.JS)</span>.
-          </motion.h1>
+          <div className="intro--text">
+            <h1 className="intro--section">
+              <span className="intro--span">
+                Hello, I'm <span className="name"> Saif Mujawar</span>.
+              </span>{" "}
+              <br />
+              <br />A <span className="intro--clip">Frontend developer </span>
+              with <span className="intro--span">4+ years</span> of experience.
+              I enjoy building
+              <span className="intro--italic intro--clip">
+                {" "}
+                sites & apps
+              </span>. <br /> <br /> My focus is
+              <span className="intro--underline"> React (Next.JS)</span>.
+            </h1>
+          </div>
         </div>
-      </div>
-      <div className="intro--right">
-        <motion.h1
-          className="intro--section"
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 20,
-            delay: 0.2,
-            duration: 0.7,
-          }}
-        >
-          <Resume setResumeDownload={setResumeDownload} />
-        </motion.h1>
-      </div>
+        <div className="intro--right">
+          <h1 className="intro--section">
+            <Resume setResumeDownload={setResumeDownload} />
+          </h1>
+        </div>
+      </motion.div>
     </motion.section>
   );
 }

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
 .projects {
   color: var(--text-color);
   width: 100%;
@@ -374,6 +375,7 @@
     -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
     font-size: 60px;
     text-align: center;
+    font-family: "Alfa Slab One", cursive;
   }
   .waviy span {
     font-family: "Alfa Slab One", cursive;
@@ -409,6 +411,9 @@
     .flip {
       max-width: 100%;
       width: 100%;
+    }
+    .waviy {
+      font-size: 2.5rem;
     }
   }
 }
