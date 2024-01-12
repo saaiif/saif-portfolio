@@ -144,13 +144,13 @@ input[type="submit"]:active {
   opacity: 1;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 990px) {
   .contact {
     h1 {
-      font-size: 8vw !important;
+      font-size: 5vw !important;
     }
     code {
-      font-size: 3vw !important;
+      font-size: 2vw !important;
       font-weight: bold;
     }
   }

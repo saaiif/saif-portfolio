@@ -1,3 +1,5 @@
+import React from "react";
+
 function IntroRight() {
   return (
     <svg
@@ -196,5 +198,43 @@ function IntroRight() {
     </svg>
   );
 }
+
+export const ProfileSVG = () => {
+  return (
+    <svg
+      id="sw-js-blob-svg"
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
+    >
+      {" "}
+      <defs>
+        {" "}
+        <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
+          {" "}
+          <stop
+            id="stop1"
+            stop-color="rgba(248, 117, 55, 1)"
+            offset="0%"
+          ></stop>{" "}
+          <stop
+            id="stop2"
+            stop-color="rgba(251, 168, 31, 1)"
+            offset="100%"
+          ></stop>{" "}
+        </linearGradient>{" "}
+      </defs>{" "}
+      <path
+        fill="url(#sw-gradient)"
+        d="M17.4,-24C20.2,-18.3,18.7,-10.7,18.5,-4.3C18.3,2,19.5,7,18.5,12.4C17.4,17.7,14,23.5,9.3,24.9C4.6,26.3,-1.4,23.4,-8.3,21.4C-15.2,19.5,-22.9,18.6,-26.8,14.3C-30.8,9.9,-31,2.2,-29.7,-5.2C-28.3,-12.6,-25.4,-19.7,-20.2,-25C-15,-30.2,-7.5,-33.6,-0.1,-33.4C7.3,-33.3,14.5,-29.6,17.4,-24Z"
+        width="100%"
+        height="100%"
+        transform="translate(50 50)"
+        stroke-width="0"
+        style={{ transition: "all 0.3s ease 0s" }}
+      ></path>{" "}
+    </svg>
+  );
+};
 
 export default IntroRight;
