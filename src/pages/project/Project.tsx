@@ -8,6 +8,7 @@ import { Each } from "../../Utils";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import ProjectData from "./Projects.json";
 import useScrollToAnimation from "../../hooks/useScrollAnimation";
+import Dropdown from "../../components/Dropdown/Dropdown";
 
 const tabs = [
   "All",
@@ -45,15 +46,8 @@ function Project({ project }: any) {
             )}
           />
         ) : (
-          <select
-            onChange={(e) => setClickedIndex(tabs.indexOf(e.target.value))}
-          >
-            {tabs.map((tab) => (
-              <option value={tab} key={tab}>
-                {tab}
-              </option>
-            ))}
-          </select>
+         
+          <Dropdown tabs={tabs} setClickedIndex={setClickedIndex} />
         )}
       </div>
       <motion.div

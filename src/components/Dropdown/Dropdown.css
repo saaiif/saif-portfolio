@@ -1,0 +1,11 @@
+select {
+  background-color: blueviolet;
+  color: #fff;
+  padding: 1rem !important;
+  outline: none !important;
+  border: none !important;
+  cursor: pointer;
+}
+option {
+  background-color: rgb(95, 41, 139) !important;
+}
