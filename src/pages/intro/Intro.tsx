@@ -7,7 +7,7 @@ import useScrollToAnimation from "../../hooks/useScrollAnimation";
 
 type IntroProps = {
   intro: RefObject<any> | undefined;
-  setResumeDownload: (val: Boolean) => void;
+  setResumeDownload: (val: boolean) => void;
 };
 
 function Intro({ intro, setResumeDownload }: IntroProps) {
