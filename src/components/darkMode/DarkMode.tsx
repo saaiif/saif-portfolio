@@ -1,7 +1,9 @@
-import "./DarkMode.scss";
+import React from "react";
+
 import { MoonIcon, SunIcon } from "../../assets/icons/DarkmodeToggle";
-import useTheme from "../../hooks/useTheme";
-import { Dispatch, SetStateAction, useEffect } from "react";
+import { Dispatch, SetStateAction } from "react";
+
+import "./DarkMode.scss";
 
 type DarkModeProps = {
   setIsDarkMode?: Dispatch<SetStateAction<string | null>> | undefined;

@@ -10,5 +10,7 @@ interface EachProps {
 }
 
 export const Each: React.FC<EachProps> = ({ of, render }) => {
-  return Children.toArray(of?.map((item, index) => render(item, index)));
+  return Children.toArray(
+    of?.map((item: any, index: number) => render(item, index))
+  );
 };

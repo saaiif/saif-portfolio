@@ -1,3 +1,5 @@
+import React from "react";
+
 export function MoonIcon() {
   return (
     <svg
@@ -42,8 +44,20 @@ export function SunIcon() {
         width='40.001'
         height='16'
       />
-      <rect x='46.9' y='164.979' transform='matrix(0.9239 0.3827 -0.3827 0.9239 71.29 -12.4346)' width='40.001' height='16' />
-      <rect x='46.947' y='315.048' transform='matrix(0.9239 -0.3827 0.3827 0.9239 -118.531 50.2116)' width='40.001' height='16' />
+      <rect
+        x='46.9'
+        y='164.979'
+        transform='matrix(0.9239 0.3827 -0.3827 0.9239 71.29 -12.4346)'
+        width='40.001'
+        height='16'
+      />
+      <rect
+        x='46.947'
+        y='315.048'
+        transform='matrix(0.9239 -0.3827 0.3827 0.9239 -118.531 50.2116)'
+        width='40.001'
+        height='16'
+      />
 
       <rect
         x='164.966'
@@ -76,13 +90,25 @@ export function SunIcon() {
         width='40.001'
         height='16'
       />
-      <rect x='315.001' y='46.895' transform='matrix(0.9238 0.3828 -0.3828 0.9238 50.212 -118.5529)' width='16' height='39.999' />
+      <rect
+        x='315.001'
+        y='46.895'
+        transform='matrix(0.9238 0.3828 -0.3828 0.9238 50.212 -118.5529)'
+        width='16'
+        height='39.999'
+      />
       <path
         d='M248,88c-88.224,0-160,71.776-160,160s71.776,160,160,160s160-71.776,160-160S336.224,88,248,88z M248,392
 				c-79.4,0-144-64.6-144-144s64.6-144,144-144s144,64.6,144,144S327.4,392,248,392z'
       />
       <rect x='240' width='16' height='72' />
-      <rect x='62.097' y='90.096' transform='matrix(0.7071 0.7071 -0.7071 0.7071 98.0963 -40.6334)' width='71.999' height='16' />
+      <rect
+        x='62.097'
+        y='90.096'
+        transform='matrix(0.7071 0.7071 -0.7071 0.7071 98.0963 -40.6334)'
+        width='71.999'
+        height='16'
+      />
       <rect y='240' width='72' height='16' />
 
       <rect

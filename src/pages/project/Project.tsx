@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Project.scss";
 import { motion } from "framer-motion";
-import MyImage from "../../assets/images/profile.jpeg";
-import useScrollToSection from "../../hooks/useScrollToSection";
-import Resume from "../intro/Resume";
 import { Each } from "../../Utils";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import ProjectData from "./Projects.json";
@@ -30,9 +27,9 @@ function Project({ project }: any) {
   }, [control, inView]);
 
   return (
-    <section className="projects" ref={project} id="project">
-      <h1 datatype="Skills">Projects</h1>
-      <div className="projects--tabs">
+    <section className='projects' ref={project} id='project'>
+      <h1 datatype='Skills'>Projects</h1>
+      <div className='projects--tabs'>
         {width && width > 570 ? (
           <Each
             of={tabs}
@@ -46,16 +43,15 @@ function Project({ project }: any) {
             )}
           />
         ) : (
-         
           <Dropdown tabs={tabs} setClickedIndex={setClickedIndex} />
         )}
       </div>
       <motion.div
         ref={sectionRef}
         variants={boxVariant}
-        initial="hidden"
+        initial='hidden'
         animate={control}
-        className="projects--cards-container"
+        className='projects--cards-container'
       >
         {ProjectData?.map(
           ({ id, name, image, url, techstack, description, key }, index) => {
@@ -71,31 +67,31 @@ function Project({ project }: any) {
                   key={id}
                 >
                   <div
-                    className="front"
+                    className='front'
                     style={{
                       backgroundImage: `linear-gradient(#0001, #000), url(${image})`,
                     }}
                   >
-                    <h1 className="text-shadow">{name}</h1>
+                    <h1 className='text-shadow'>{name}</h1>
                   </div>
-                  <div className="back">
+                  <div className='back'>
                     <h2>{techstack}</h2>
                     <p>{description}</p>
                     <a
                       href={url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="demo-btn"
+                      target='_blank'
+                      rel='noreferrer'
+                      className='demo-btn'
                     >
                       Live Demo
-                      <div id="clip">
-                        <div id="leftTop" className="corner"></div>
-                        <div id="rightBottom" className="corner"></div>
-                        <div id="rightTop" className="corner"></div>
-                        <div id="leftBottom" className="corner"></div>
+                      <div id='clip'>
+                        <div id='leftTop' className='corner'></div>
+                        <div id='rightBottom' className='corner'></div>
+                        <div id='rightTop' className='corner'></div>
+                        <div id='leftBottom' className='corner'></div>
                       </div>
-                      <span id="rightArrow" className="arrow"></span>
-                      <span id="leftArrow" className="arrow"></span>
+                      <span id='rightArrow' className='arrow'></span>
+                      <span id='leftArrow' className='arrow'></span>
                     </a>
                   </div>
                 </div>
@@ -103,7 +99,7 @@ function Project({ project }: any) {
             } else if (index === 0) {
               return (
                 <>
-                  <div className="waviy">
+                  <div className='waviy'>
                     <span style={{ "--i": 1 } as React.CSSProperties}>c</span>
                     <span style={{ "--i": 2 } as React.CSSProperties}>o</span>
                     <span style={{ "--i": 3 } as React.CSSProperties}>m</span>
@@ -118,7 +114,7 @@ function Project({ project }: any) {
                 </>
               );
             }
-          },
+          }
         )}
       </motion.div>
     </section>
