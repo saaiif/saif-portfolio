@@ -27,7 +27,7 @@ export default function ContactForm({ isDarkMode }: any) {
       fullname: "",
       email: "",
       message: "",
-    },
+    }
   );
   const { fullname, email, message } = fields;
 
@@ -38,22 +38,20 @@ export default function ContactForm({ isDarkMode }: any) {
       emailjs.sendForm(
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
-        form.current,
-        import.meta.env.VITE_PUBLIC_KEY,
+        form?.current!,
+        import.meta.env.VITE_PUBLIC_KEY
       ),
       {
         loading: "Sending Mail, Please wait..",
         success: (data: any) => {
-          if (data.status === 200) {
-            setFields({
-              fullname: "",
-              email: "",
-              message: "",
-            });
-            return `Mail sent successfully`;
-          }
+          setFields({
+            fullname: "",
+            email: "",
+            message: "",
+          });
+          return `Mail sent successfully`;
         },
-        error: (err: any) => {
+        error: () => {
           setFields({
             fullname: "",
             email: "",
@@ -68,47 +66,51 @@ export default function ContactForm({ isDarkMode }: any) {
           backgroundColor: isDarkMode === "light" ? "#082b0b" : "#ece9e6",
           color: isDarkMode === "light" ? "#ffffff" : "#000000",
         },
-      },
+      }
     );
+
+    setFields({
+      fullname: "",
+      email: "",
+      message: "",
+    });
   };
-
-
 
   return (
     <>
       <form ref={form} onSubmit={onSubmit}>
-        {errors.fullname && <p role="alert">{errors?.fullname?.message}</p>}
+        {errors.fullname && <p role='alert'>{errors?.fullname?.message}</p>}
         <input
-          type="text"
-          name="fullname"
-          placeholder="Full Name"
+          type='text'
+          name='fullname'
+          placeholder='Full Name'
           required
           value={fullname}
           onChange={(e) => setFields({ fullname: e.target.value })}
-          autoComplete="off"
+          autoComplete='off'
         />
 
-        {errors.email && <p role="alert">{errors.email.message}</p>}
+        {errors.email && <p role='alert'>{errors.email.message}</p>}
         <input
-          type="email"
-          name="email"
-          placeholder="Email"
+          type='email'
+          name='email'
+          placeholder='Email'
           required
           value={email}
           onChange={(e) => setFields({ email: e.target.value })}
-          autoComplete="off"
+          autoComplete='off'
         />
 
-        {errors.message && <p role="alert">{errors?.message?.message}</p>}
+        {errors.message && <p role='alert'>{errors?.message?.message}</p>}
         <textarea
-          name="message"
-          placeholder="Message"
+          name='message'
+          placeholder='Message'
           required
           value={message}
           onChange={(e) => setFields({ message: e.target.value })}
-          autoComplete="off"
+          autoComplete='off'
         />
-        <input type="submit" />
+        <input type='submit' />
       </form>
       <Toaster />
     </>
