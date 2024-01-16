@@ -1,0 +1,120 @@
+.skills-page {
+  color: var(--text-color);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  // padding-top: 5rem;
+  h1 {
+    text-align: center;
+    font-family: "DynaPuff";
+    font-weight: 400;
+  }
+
+  &--skills {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &--languages {
+    h2 {
+      margin-top: 2rem;
+      font-family: "DynaPuff";
+      font-weight: 400;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+      font-size: 2vw;
+    }
+    ul {
+      max-width: 20rem;
+      width: 100%;
+      height: fit-content;
+      background-color: var(--skills-card-background-color);
+      padding: 2rem;
+      border-radius: 3%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow:
+        rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+        rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        var(--box-shadow) 0px 8px 60px -40px;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid transparent;
+      height: 100%;
+      font-size: 1.2em;
+      &:hover {
+        .SpinIcon {
+          animation-play-state: paused;
+        }
+      }
+    }
+
+    li > svg {
+      max-width: 2rem;
+      margin-right: 10px;
+      height: fit-content;
+    }
+    li > span {
+      color: var(--secondary-color);
+    }
+  }
+}
+
+.SpinIcon {
+  animation: rotating 4s linear infinite;
+}
+.ZoomIcon {
+  animation: zoom 0.5s linear infinite;
+}
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes zoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 990px) {
+  .skills-page {
+    height: 100%;
+    margin-top: 1rem;
+    &--skills {
+      display: block;
+      width: max-content;
+      margin: 0 auto;
+    }
+    &--languages {
+      margin: 2rem 0;
+    }
+  }
+}
+@media (max-width: 800px) {
+  .skills-page {
+    h1 {
+      font-size: 3.5rem;
+    }
+    &--languages {
+      h2 {
+        font-size: 4vw;
+      }
+    }
+  }
+}

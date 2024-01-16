@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Admin Dashboard",
+    "image": "/src/assets/images/admindashboard.png",
+    "description": "The Admin Dashboard application utilizes ReactJS, Redux, Nivo Charts, and Context API to display comprehensive business data analysis with a variety of interactive charts.",
+    "techstack": "React JS, Context API, Nivo Charts, Material UI",
+    "url": "https://saif-admindashboard.netlify.app/",
+    "key": 4
+  },
+  {
+    "id": 2,
+    "name": "E-commerce Filter",
+    "image": "/src/assets/images/ecommercefiltercart.png",
+    "description": "The implemented ecommerce application utilizes React and Redux to provide a seamless user experience, allowing users to filter products by name, size, and price while easily managing their selections in the cart.",
+    "techstack": "React JS, Redux",
+    "url": "https://saif-ecommercefiltercart.netlify.app/",
+    "key": 4
+  },
+  {
+    "id": 3,
+    "name": "News Web App",
+    "image": "/src/assets/images/newsappwithcontext.png",
+    "description": "The newly developed web app built with ReactJS showcases daily news updates, offering an engaging and user-friendly platform for accessing current news articles.",
+    "techstack": "React JS, Context API",
+    "url": "https://saif-newsappwithcontext.netlify.app/",
+    "key": 4
+  }
+]
