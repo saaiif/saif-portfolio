@@ -32,10 +32,9 @@
       transition: all 0.2s ease;
       border-radius: 25px;
       outline: none;
-      border: 1px solid #6da4aa;
       color: #000000;
       font-size: 1vw;
-      font-family: "DynaPuff";
+      font-family: DynaPuff, cursive;
     }
     button:hover {
       background: linear-gradient(
@@ -59,7 +58,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 16px;
 
-    > &--cards {
+    &--cards {
       justify-content: center;
       text-align: center;
       display: flex;
@@ -166,26 +165,16 @@
     }
 
     .text-shadow {
-      text-shadow:
-        1px 1px rgba(226, 200, 200, 0.04),
-        2px 2px rgba(0, 0, 0, 0.04),
-        3px 3px rgba(0, 0, 0, 0.04),
-        4px 4px rgba(0, 0, 0, 0.04),
-        0.125rem 0.125rem rgba(0, 0, 0, 0.04),
-        6px 6px rgba(223, 204, 204, 0.2),
-        7px 7px rgba(0, 0, 0, 0.04),
-        8px 8px rgba(0, 0, 0, 0.04),
-        9px 9px rgba(0, 0, 0, 0.04),
-        0.3125rem 0.3125rem rgba(0, 0, 0, 0.04),
-        11px 11px rgba(0, 0, 0, 0.04),
-        12px 12px rgba(0, 0, 0, 0.04),
-        13px 13px rgba(0, 0, 0, 0.04),
-        14px 14px rgba(0, 0, 0, 0.04),
-        0.625rem 0.625rem rgba(0, 0, 0, 0.04),
-        16px 16px rgba(0, 0, 0, 0.04),
-        17px 17px rgba(0, 0, 0, 0.04),
-        18px 18px rgba(0, 0, 0, 0.04),
-        19px 19px rgba(0, 0, 0, 0.04),
+      text-shadow: 1px 1px rgba(226, 200, 200, 0.04),
+        2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04),
+        4px 4px rgba(0, 0, 0, 0.04), 0.125rem 0.125rem rgba(0, 0, 0, 0.04),
+        6px 6px rgba(223, 204, 204, 0.2), 7px 7px rgba(0, 0, 0, 0.04),
+        8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04),
+        0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04),
+        12px 12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04),
+        14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04),
+        16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04),
+        18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0, 0, 0, 0.04),
         1.25rem 1.25rem rgba(0, 0, 0, 0.04);
     }
   }
@@ -289,26 +278,22 @@
   }
 
   .demo-btn:hover #leftTop {
-    animation:
-      0.1s ease-in-out 0.05s both changeColor8,
+    animation: 0.1s ease-in-out 0.05s both changeColor8,
       0.2s linear 0.4s both lightEffect8;
   }
 
   .demo-btn:hover #rightTop {
-    animation:
-      0.1s ease-in-out 0.15s both changeColor8,
+    animation: 0.1s ease-in-out 0.15s both changeColor8,
       0.2s linear 0.4s both lightEffect8;
   }
 
   .demo-btn:hover #rightBottom {
-    animation:
-      0.1s ease-in-out 0.25s both changeColor8,
+    animation: 0.1s ease-in-out 0.25s both changeColor8,
       0.2s linear 0.4s both lightEffect8;
   }
 
   .demo-btn:hover #leftBottom {
-    animation:
-      0.1s ease-in-out 0.35s both changeColor8,
+    animation: 0.1s ease-in-out 0.35s both changeColor8,
       0.2s linear 0.4s both lightEffect8;
   }
 

@@ -1,7 +1,7 @@
 import React, { RefObject, useEffect } from "react";
 import { motion } from "framer-motion";
 import Resume from "./Resume";
-import MyImage from "../../assets/images/profile.jpeg";
+import MyImage from "../../assets/images/linkedin.png";
 import "./Intro.scss";
 import useScrollToAnimation from "../../hooks/useScrollAnimation";
 
@@ -19,39 +19,39 @@ function Intro({ intro, setResumeDownload }: IntroProps) {
   }, [control, inView]);
 
   return (
-    <motion.section className="intro" ref={intro} id="intro">
+    <motion.section className='intro' ref={intro} id='intro'>
       <motion.div
         ref={sectionRef}
         variants={boxVariant}
-        initial="hidden"
+        initial='hidden'
         animate={control}
-       className="intro--container"
+        className='intro--container'
       >
-        <div className="intro--left">
-          <div className="intro--img">
-            <img src={MyImage} alt="profile-pic" loading="lazy" />
-            <span className="img-hand-wave">👋</span>
+        <div className='intro--left'>
+          <div className='intro--img'>
+            <img src={MyImage} alt='profile-pic' loading='lazy' />
+            <span className='img-hand-wave'>👋</span>
           </div>
 
-          <div className="intro--text">
-            <h1 className="intro--section">
-              <span className="intro--span">
-                Hello, I'm <span className="name"> Saif Mujawar</span>.
+          <div className='intro--text'>
+            <h1 className='intro--section'>
+              <span className='intro--span'>
+                Hello, I'm <span className='name'> Saif Mujawar</span>.
               </span>{" "}
               <br />
-              <br />A <span className="intro--clip">Frontend developer </span>
-              with <span className="intro--span">4+ years</span> of experience.
+              <br />A <span className='intro--clip'>Frontend developer </span>
+              with <span className='intro--span'>4+ years</span> of experience.
               I enjoy building
-              <span className="intro--italic intro--clip">
+              <span className='intro--italic intro--clip'>
                 {" "}
                 sites & apps
               </span>. <br /> <br /> My focus is
-              <span className="intro--underline"> React (Next.JS)</span>.
+              <span className='intro--underline'> React (Next.JS)</span>.
             </h1>
           </div>
         </div>
-        <div className="intro--right">
-          <h1 className="intro--section">
+        <div className='intro--right'>
+          <h1 className='intro--section'>
             <Resume setResumeDownload={setResumeDownload} />
           </h1>
         </div>
