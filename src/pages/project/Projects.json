@@ -6,7 +6,7 @@
     "description": "The Admin Dashboard application utilizes ReactJS, Redux, Nivo Charts, and Context API to display comprehensive business data analysis with a variety of interactive charts.",
     "techstack": "React JS, Context API, Nivo Charts, Material UI",
     "url": "https://saif-admindashboard.netlify.app/",
-    "key": 4
+    "key": 3
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "description": "The implemented ecommerce application utilizes React and Redux to provide a seamless user experience, allowing users to filter products by name, size, and price while easily managing their selections in the cart.",
     "techstack": "React JS, Redux",
     "url": "https://saif-ecommercefiltercart.netlify.app/",
-    "key": 4
+    "key": 3
   },
   {
     "id": 3,
@@ -24,6 +24,24 @@
     "description": "The newly developed web app built with ReactJS showcases daily news updates, offering an engaging and user-friendly platform for accessing current news articles.",
     "techstack": "React JS, Context API",
     "url": "https://saif-newsappwithcontext.netlify.app/",
-    "key": 4
+    "key": 3
+  },
+  {
+    "id": 4,
+    "name": "Color Pallete App",
+    "image": "/projectImages/colorpallete.png",
+    "description": "The color pallete app which is a handy tool for any frontend developer, which eases the color range selection",
+    "techstack": "React JS, Context API",
+    "url": "https://colorsgenerator.web.app/",
+    "key": 3
+  },
+  {
+    "id": 5,
+    "name": "Simple Omelette Recipe",
+    "image": "/projectImages/reciepehtml.png",
+    "description": "A Reciepe landing page which describes steps to make omelette",
+    "techstack": "HTML5,CSS3",
+    "url": "https://reciepepage.vercel.app/",
+    "key": 1
   }
 ]
