@@ -25,7 +25,7 @@ function Project({ project }: any) {
   useEffect(() => {
     accessibilty();
   }, [control, inView]);
-  
+
   const filterData = ProjectData.filter(
     (project) => project.key === clickedIndex || clickedIndex === 0
   );
@@ -62,7 +62,7 @@ function Project({ project }: any) {
             ({ id, name, image, url, techstack, description, key }, index) => {
               console.log(!tabs?.includes(tabs[key - 1] ?? ""));
 
-              if ((clickedIndex === key || clickedIndex === 0) && index !== 5) {
+              if ((clickedIndex === key || clickedIndex === 0) && index <= 5) {
                 return (
                   <div
                     className={`flip ${

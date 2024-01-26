@@ -30,7 +30,7 @@
     "id": 4,
     "name": "Color Pallete App",
     "image": "/projectImages/colorpallete.png",
-    "description": "The color pallete app which is a handy tool for any frontend developer, which eases the color range selection",
+    "description": "The color pallete app which is a handy tool for any frontend developer, which eases the color range selection.",
     "techstack": "React JS, Context API",
     "url": "https://colorsgenerator.web.app/",
     "key": 3
@@ -39,9 +39,18 @@
     "id": 5,
     "name": "Simple Omelette Recipe",
     "image": "/projectImages/reciepehtml.png",
-    "description": "A Reciepe landing page which describes steps to make omelette",
+    "description": "A Reciepe landing page which describes steps to make omelette.",
     "techstack": "HTML5,CSS3",
     "url": "https://reciepepage.vercel.app/",
+    "key": 1
+  },
+  {
+    "id": 6,
+    "name": "Stats preview card component",
+    "image": "/projectImages/cardcomponenthtmlcss.png",
+    "description": "A card component with optimal layout, depending on different device's screen size.",
+    "techstack": "HTML5,CSS3",
+    "url": "https://cardcomponenthtmlcss.netlify.app/",
     "key": 1
   }
 ]
