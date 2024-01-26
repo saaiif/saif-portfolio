@@ -118,7 +118,7 @@ function Project({ project }: any) {
           </div>
         )}
       </motion.div>
-      {filterData?.length > 4 && <button>Show More</button>}
+      {/* {filterData?.length > 4 && <button>Show More</button>} */}
     </section>
   );
 }
