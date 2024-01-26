@@ -2,6 +2,7 @@ import React, { RefObject, useEffect } from "react";
 import { motion } from "framer-motion";
 import Resume from "./Resume";
 import MyImage from "../../assets/images/linkedin.png";
+import MyNameImg from "../../assets/images/nametxt.png";
 import "./Intro.scss";
 import useScrollToAnimation from "../../hooks/useScrollAnimation";
 
@@ -36,9 +37,12 @@ function Intro({ intro, setResumeDownload }: IntroProps) {
           <div className='intro--text'>
             <h1 className='intro--section'>
               <span className='intro--span'>
-                Hello, I'm <span className='name'> Saif Mujawar</span>.
+                Hello, I'm <br />
+                <span className='name'>
+                  <img src={MyNameImg} alt='name' loading='lazy' />
+                </span>
+                .
               </span>{" "}
-              <br />
               <br />A <span className='intro--clip'>Frontend developer </span>
               with <span className='intro--span'>4+ years</span> of experience.
               I enjoy building
