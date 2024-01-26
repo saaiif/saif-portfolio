@@ -46,6 +46,15 @@
   },
   {
     "id": 6,
+    "name": "Todo List",
+    "image": "/projectImages/Todolist.png",
+    "description": "Making grocery or any other list made easy on your finger tips",
+    "techstack": "HTML5, CSS3, JS",
+    "url": "https://siafjstodo.netlify.app/",
+    "key": 2
+  },
+  {
+    "id": 7,
     "name": "Stats preview card component",
     "image": "/projectImages/cardcomponenthtmlcss.png",
     "description": "A card component with optimal layout, depending on different device's screen size.",
